@@ -1,7 +1,7 @@
 vXXX:
 	make -C vXXX
 
-v502:
+v504:
 	make -C v504
 
 v500:
