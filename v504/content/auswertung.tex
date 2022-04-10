@@ -50,5 +50,71 @@ In \autoref{tab:kennlinien} sind die Messdaten der fünf Kennlinien aufgetragen.
   \end{tabular}
 \end{table}
 
-Zur Bestimmung des Sättigungstroms $I_{text{S}}$ werden die Messdaten graphisch dargestellt.
+Zur Bestimmung des Sättigungstroms $I_{\text{S}}$ werden die Messdaten graphisch dargestellt.
+\begin{figure}
+  \centering
+  
+  \begin{subfigure}{0.49\columnwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plot_k1.pdf}
+  \caption{Kennlinie 1 mit $I_\text{Heiz} = \qty{2,0}{\milli\ampere}$.}
+  \label{fig:k1}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\columnwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plot_k2.pdf}
+  \caption{Kennlinie 2 mit $I_\text{Heiz} = \qty{2,1}{\milli\ampere}$.}
+  \label{fig:k2}
+  \end{subfigure}
+  
+  \medskip
+  
+  \begin{subfigure}{0.49\columnwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plot_k3.pdf}
+  \caption{Kennlinie 3 mit $I_\text{Heiz} = \qty{2,2}{\milli\ampere}$.}
+  \label{fig:k3}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\columnwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plot_k4.pdf}
+  \caption{Kennlinie 4 mit $I_\text{Heiz} = \qty{2,3}{\milli\ampere}$.}
+  \label{fig:k4}
+  \end{subfigure}
+  
+  \medskip
+  
+  \begin{subfigure}{0.49\columnwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plot_k5.pdf}
+  \caption{Kennlinie 5 mit $I_\text{Heiz} = \qty{2,4}{\milli\ampere}$.}
+  \label{fig:k5}
+  \end{subfigure}
+  
+  \caption{Die fünf Kennlinien mit den jeweils angelegten Heiztrömen.}
+  \label{fig:k}
+\end{figure}
 
+Der Sättigungstrom wird an der Asymptote abgelesen beziehungsweise wie in \autoref{fig:k5} 
+mithilfe des Wendepunktes berechnet.
+\begin{align*}
+  \text{Kennlinie 1} : \quad I_\text{S} &= \qty{0,12}{\milli\ampere} \\
+  \text{Kennlinie 2} : \quad I_\text{S} &= \qty{0,27}{\milli\ampere} \\
+  \text{Kennlinie 3} : \quad I_\text{S} &= \qty{0,60}{\milli\ampere} \\
+  \text{Kennlinie 4} : \quad I_\text{S} &= \qty{1,25}{\milli\ampere} \\
+  \text{Kennlinie 5} : \quad I_\text{S} &= 2 \cdot I_\text{W} = 2 \cdot \qty{1,025}{\milli\ampere} \\
+                                        &= \qty{2,05}{\milli\ampere}
+\end{align*}
+
+\subsection{Raumladungsgesetz}
+
+Um die Gültigkeit des Raumladungsgesetzes zu überprüfen wird bei der Kennlinie mit
+dem höchsten Heizstrom eine Ausgleichsrechung mithilfe des Langmuir-Schottkyschen
+Raumladungsgesetzes durchgeführt. 
+Dabei wird unter anderem der Exponent als freier Parameter gewählt
+\begin{equation}
+  I= \frac{4}{9} \varepsilon_{0} \sqrt{\frac{2 e_{0}}{m_{0}}} \cdot \frac{U^{\frac{3}{2}}}{a^2}
+\end{equation}
+
+Die Konstanten werden nach eingesetzt, die dadurch bestimmten Parameter ergeben
+sich zu
