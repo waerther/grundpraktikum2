@@ -11,10 +11,10 @@ In \autoref{tab:kennlinien} sind die Messdaten der fünf Kennlinien aufgetragen.
   \label{tab:kennlinien}
   \begin{tabular}{c c c c c c}
     \toprule
-    & \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.0}{\ampere}$} &
+    & \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{1.9}{\ampere}$} &
+      \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.0}{\ampere}$} &
       \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.1}{\ampere}$} &
       \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.2}{\ampere}$} &
-      \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.3}{\ampere}$} &
       \multicolumn{1}{c}{$I_{\text{Heiz}} = \qty{2.4}{\ampere}$} \\
       \cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}
 
@@ -25,46 +25,44 @@ In \autoref{tab:kennlinien} sind die Messdaten der fünf Kennlinien aufgetragen.
     $I \mathbin{/} \unit{\milli\ampere}$ &
     $I \mathbin{/} \unit{\milli\ampere}$ \\
     \midrule
-       0 & 0,000 &   0,000 &   0,000 &   0,000 &   0,000 \\
-       5 & 0,010 &   0,012 &   0,014 &   0,016 &   0,017 \\
-      10 & 0,022 &   0,028 &   0,033 &   0,036 &   0,039 \\
-      15 & 0,034 &   0,045 &   0,053 &   0,058 &   0,061 \\
-      20 & 0,044 &   0,062 &   0,076 &   0,084 &   0,089 \\
-      25 & 0,060 &   0,080 &   0,096 &   0,104 &   0,110 \\
-      30 & 0,070 &   0,096 &   0,116 &   0,130 &   0,137 \\
-      35 & 0,082 &   0,114 &   0,140 &   0,158 &   0,169 \\
-      40 & 0,092 &   0,134 &   0,168 &   0,194 &   0,207 \\
-      45 & 0,102 &   0,155 &   0,201 &   0,230 &   0,246 \\
-      50 & 0,107 &   0,170 &   0,228 &   0,265 &   0,287 \\
-      60 & 0,111 &   0,213 &   0,285 &   0,337 &   0,371 \\
-      70 & 0,119 &   0,231 &   0,340 &   0,425 &   0,480 \\
-      80 & 0,123 &   0,247 &   0,402 &   0,515 &   0,586 \\
-      90 & 0,124 &   0,270 &   0,459 &   0,608 &   0,694 \\
-     100 & 0,124 &   0,272 &   0,517 &   0,685 &   0,790 \\
-     120 & 0,124 &   0,268 &   0,604 &   0,841 &   1,010 \\
-     140 & 0,124 &   0,269 &   0,614 &   0,909 &   1,219 \\
-     160 & 0,124 &   0,275 &   0,592 &   1,077 &   1,422 \\
-     180 & 0,124 &   0,281 &   0,593 &   1,110 &   1,592 \\
-     200 & 0,124 &   0,289 &   0,619 &   1,220 &   1,700 \\
-     250 & 0,124 &   0,281 &   0,636 &   1,286 &   2,100 \\
+    0   &  0,00 &    0,00 &    0,00 &   0,000 &    0,00 \\
+    5   &  0,01 &    0,01 &    0,01 &   0,020 &    0,03 \\
+    10  &  0,03 &    0,04 &    0,05 &   0,050 &    0,10 \\
+    15  &  0,05 &    0,06 &    0,10 &   0,100 &    0,18 \\
+    20  &  0,07 &    0,09 &    0,16 &   0,200 &    0,26 \\
+    25  &  0,08 &    0,12 &    0,22 &   0,290 &    0,37 \\
+    30  &  0,08 &    0,14 &    0,26 &   0,370 &    0,48 \\
+    35  &  0,08 &    0,15 &    0,29 &   0,450 &    0,60 \\
+    40  &  0,08 &    0,15 &    0,32 &   0,510 &    0,72 \\
+    45  &  0,08 &    0,15 &    0,33 &   0,570 &    0,86 \\
+    50  &  0,08 &    0,17 &    0,34 &   0,620 &    0,99 \\
+    60  &       &         &    0,35 &   0,690 &    1,25 \\
+    70  &       &         &    0,36 &   0,730 &    1,48 \\
+    80  &       &         &         &   0,750 &    1,68 \\
+    90  &       &         &         &   0,760 &    1,89 \\
+    100 &       &         &         &   0,770 &    2,07 \\
+    110 &       &         &         &   0,841 &    2,33 \\
+    120 &       &         &         &   0,780 &    2,33 \\
+    130 &       &         &         &         &    2,43 \\
+    140 &       &         &         &         &    2,50 \\
   \bottomrule
   \end{tabular}
 \end{table}
 
-Zur Bestimmung des Sättigungstroms $I_{\text{S}}$ werden die Messdaten graphisch dargestellt.
+Zur Bestimmung des Sättigungstroms $I_{\text{S}}$ werden die Messdaten in \autoref{fig:k} graphisch dargestellt.
 \begin{figure}
   \centering
   
   \begin{subfigure}{0.49\columnwidth}
   \centering
   \includegraphics[width=\textwidth]{plot_k1.pdf}
-  \caption{Kennlinie 1 mit $I_\text{Heiz} = \qty{2,0}{\ampere}$.}
+  \caption{Kennlinie 1 mit $I_\text{Heiz} = \qty{1,9}{\ampere}$.}
   \label{fig:k1}
   \end{subfigure}\hfill
   \begin{subfigure}{0.49\columnwidth}
   \centering
   \includegraphics[width=\textwidth]{plot_k2.pdf}
-  \caption{Kennlinie 2 mit $I_\text{Heiz} = \qty{2,1}{\ampere}$.}
+  \caption{Kennlinie 2 mit $I_\text{Heiz} = \qty{2,0}{\ampere}$.}
   \label{fig:k2}
   \end{subfigure}
   
@@ -73,60 +71,58 @@ Zur Bestimmung des Sättigungstroms $I_{\text{S}}$ werden die Messdaten graphisc
   \begin{subfigure}{0.49\columnwidth}
   \centering
   \includegraphics[width=\textwidth]{plot_k3.pdf}
-  \caption{Kennlinie 3 mit $I_\text{Heiz} = \qty{2,2}{\ampere}$.}
+  \caption{Kennlinie 3 mit $I_\text{Heiz} = \qty{2,1}{\ampere}$.}
   \label{fig:k3}
   \end{subfigure}\hfill
   \begin{subfigure}{0.49\columnwidth}
   \centering
   \includegraphics[width=\textwidth]{plot_k4.pdf}
-  \caption{Kennlinie 4 mit $I_\text{Heiz} = \qty{2,3}{\ampere}$.}
+  \caption{Kennlinie 4 mit $I_\text{Heiz} = \qty{2,2}{\ampere}$.}
   \label{fig:k4}
   \end{subfigure}
   
   \medskip
   
-  \begin{subfigure}{0.49\columnwidth}
+  \begin{subfigure}{0.7\columnwidth}
   \centering
   \includegraphics[width=\textwidth]{plot_k5.pdf}
   \caption{Kennlinie 5 mit $I_\text{Heiz} = \qty{2,4}{\ampere}$.}
   \label{fig:k5}
   \end{subfigure}
-  
+
   \caption{Die fünf Kennlinien mit den jeweils angelegten Heiztrömen.}
   \label{fig:k}
+
 \end{figure}
 
-Der Sättigungstrom wird an der Asymptote abgelesen beziehungsweise wie in \autoref{fig:k5} 
-mithilfe des Wendepunktes berechnet.
+Der Sättigungstrom wird ab einer asymptotischen Entwicklung der Kennlinie abgelesen:
 \begin{align*}
-  \text{Kennlinie 1} : \quad I_\text{S} &= \qty{0,12}{\milli\ampere} \\
-  \text{Kennlinie 2} : \quad I_\text{S} &= \qty{0,27}{\milli\ampere} \\
-  \text{Kennlinie 3} : \quad I_\text{S} &= \qty{0,60}{\milli\ampere} \\
-  \text{Kennlinie 4} : \quad I_\text{S} &= \qty{1,25}{\milli\ampere} \\
-  \text{Kennlinie 5} : \quad I_\text{S} &= \qty{2,10}{\milli\ampere}
+  \text{Kennlinie 1} : \quad I_\text{S} &= \qty{0,08}{\milli\ampere} \\
+  \text{Kennlinie 2} : \quad I_\text{S} &= \qty{0,15}{\milli\ampere} \\
+  \text{Kennlinie 3} : \quad I_\text{S} &= \qty{0,35}{\milli\ampere} \\
+  \text{Kennlinie 4} : \quad I_\text{S} &= \qty{0,75}{\milli\ampere} \\
+  \text{Kennlinie 5} : \quad I_\text{S} &= \qty{2,33}{\milli\ampere}
 \end{align*}
 
 
 \subsection{Raumladungsgesetz}
 
-Um die Gültigkeit des Raumladungsgesetzes zu überprüfen wird bei der Kennlinie mit
-dem höchsten Heizstrom eine Ausgleichsrechung mithilfe des Langmuir-Schottkyschen
-Raumladungsgesetzes nach \autoref{eq:lsr} durchgeführt. 
-Dabei wird unter anderem der Exponent als freier Parameter gewählt.
+Mithilfe des Langmuir-Schottkyschen Raumladungsgesetzes nach \autoref{eq:lsr} wird bei Kennlinie 5 eine Ausgleichsrechung durchgeführt. 
+Dabei werden der Faktor $\frac{1}{a^{2}}$ und der Exponent $b$ als freiee Parameter gewählt.
 \begin{equation*}
   I= \frac{4}{9} \varepsilon_{0} \sqrt{\frac{2 e_{0}}{m_{0}}} \cdot \frac{U^{b}}{a^2}
 \end{equation*}
-Die Konstanten werden nach \cite{constants} eingesetzt, die dadurch bestimmten Parameter ergeben sich zu
+Die dadurch bestimmten Parameter ergeben sich zu
 \begin{align*}
-  a &= (\num{-49.826(2.123)}) \cdot 10^{-3} \\
-  b &= (\num{1.467(0.020)}) \, . 
+  a &= (\num{-17.475(1.148)}) \cdot 10^{-3} \\
+  b &= (\num{1.232(0.031)}) \, . 
 \end{align*}
 Die sich so ergebende Funktion wird in \autoref{fig:k5} eingezeichnet.
 
 
 \subsection{Anlaufstromgebiet}
 
-In der Tabelle sind die Messwerte des Anlaufstromgebietes eingetragen. Dabei wurde
+In \autoref{tab:anlaufstrom} sind die Messdaten des Anlaufstromgebietes eingetragen. Dabei wurde
 eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
 \begin{table}
   \centering
@@ -135,7 +131,7 @@ eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
   \begin{tabular}{c c}
     \toprule
     $U \mathbin{/} \unit{\volt}$ &
-    $I \mathbin{/} \unit{\milli\ampere}$ \\
+    $I \mathbin{/} \unit{\nano\ampere}$ \\
     \midrule
     0,00 & 7,0000 \\
     0,10 & 8,1000 \\
@@ -152,18 +148,18 @@ eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
   \end{tabular}
 \end{table}
 
-Die Messwerte werden in ein Diagramm eingetragen und eine Ausgleichsrechung nach \autoref{eq:anlaufstromgebiet}
+Mithilfe dieser Messdaten wird eine Ausgleichsrechung nach \autoref{eq:anlaufstromgebiet}
 \begin{equation}
   I=a \cdot \exp \left(\frac{-e_{0} U}{k_{\text{B}} \cdot b}\right)
 \end{equation}
-durchgeführt. Mit den eingesetzten Konstanten ergeben sich die Parameter zu
+durchgeführt und in \autoref{fig:anlaufstrom}. Die Parameter ergeben sich dabei zu
 \begin{align*}
   a &= \qty{13.228(0.240)}{\nano\ampere} \, , \\
   b &= \qty{2131(70)}{\kelvin} \, . 
 \end{align*}
-Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{3079(568)}{\kelvin}$ .
+Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{2131(70)}{\kelvin}$ .
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{plot6.pdf}
   \caption{Das Anlaufstromgebiet bei einem Heizstrom von $I_\text{Heiz} = \qty{2,5}{\ampere}$.}
@@ -173,20 +169,27 @@ Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{3079(568)}
 
 \subsection{Kathodentemperatur}
 
-Die Kathodentemperaturen der verschiedenen Kennlinien werden durch eine Betrachtung der Leistungsbilanz bestimmt.
+Die Kathodentemperatur $T$ lässt sich aus einer Betrachtung der Leistungsbilanz bestimmen.
 Die zugeführte Leistung beträgt
 \begin{equation*}
-  N_{\text{zu}}=U_{\text{Heiz}} I_{\text{Heiz}} \, .
+  N_{\text{zu}}=U_{\text{Heiz}} I_{\text{Heiz}} \, ,
 \end{equation*}
 Diese wird über Wärmestrahlung und Wärmeleitung abgegeben. 
-Die Wärmeleitung der Fadenhalterung beträgt $N_{\text{WL}} = \qty{1}{\watt}$. 
+Die Wärmeleitung der Fadenhalterung wird durch $N_{\text{WL}} = \qty{1}{\watt}$ abgeschätzt. 
+
 Die Srahlungsleistung ergibt sich nach dem Stefan-Boltzmannschen Gesetz zu
 \begin{equation*}
-  N_{\mathrm{W}}=f \eta \sigma T^{4} \, ,
+  N_{\mathrm{W}}=f \eta \sigma T^{4} \, .
 \end{equation*}
-hierbei ist $\sigma=5,7 \cdot 10^{-12} \frac{\mathrm{W}}{\mathrm{cm}^{2} \mathrm{K}^{4}}$ die Stefan-Boltzmannsche Strahlungskonstante, 
-$f=$ $0,32 \mathrm{cm}^{2}$ die Kathodenoberfläche und $\eta=0,28$ der Emissionsgrad der Oberfläche. 
-Daraus ergibt sich insgesamt
+
+Mit den Größen:
+\begin{align*}
+  & \text{Kathodenoberfläche} & \quad & f = \qty{0.32}{\centi\meter\squared} \\
+  & \text{Emissionsgrad der Oberfläche} & \quad & \eta=0,28 \\
+  & \text{Stefan-Boltzmannsche Strahlungskonstante} & \quad & \sigma = \qty{5.7e-12}{\watt\per\square\centi\meter\kelvin\tothe{-4}} 
+\end{align*}
+
+Aus dem Energiesatz folgt insgesamt
 \begin{align*}
 N_{\text{zu}} &=N_{\text{W}}+N_{\text{WL}} \\
 \Leftrightarrow \quad U_{\text{Heiz}} I_{\text{Heiz}} &=f \eta \sigma T^{4}+N_{\text{WL}}
@@ -206,24 +209,47 @@ ergeben sich die in \autoref{tab:temp} dargestellten Werte für die Kathodentemp
     $I_\text{Heiz} \mathbin{/} \unit{\ampere}$ &
     $T \mathbin{/} \unit{\kelvin}$ \\
     \midrule
-    5,0 &  2,1 & 2076,75 \\
     4,5 &  1,9 & 1960,83 \\
     4,9 &  2,0 & 2037,39 \\
+    5,0 &  2,1 & 2076,75 \\
     5,5 &  2,2 & 2159,16 \\
     6,2 &  2,4 & 2283,24 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
+
 \subsection{Austrittsarbeit des Kathodenmaterials}
 
-Zut Berechnung der Austrittsarbeit der Elektronen wird die Richardson-Gleichung \ref{eq:Richardson} nach
+Zur Berechnung der Austrittsarbeit der Elektronen wird die Richardson-Gleichung \ref{eq:Richardson} nach
 $e_{0} \Phi$ umgestellt
 \begin{equation*}
   W_{\text{A}} = e_{0} \Phi = -T k_{\text{B}} \ln \left(\frac{j_{\text{S}} h^{3}}{4 \pi e_{0} m_{0} k_{\text{B}}^{2} T^{2}}\right)
-  \quad \text{wobei} \quad
+  \quad \text{mit} \quad
   j_\text{S} = \frac{I_\text{S}}{f}
 \end{equation*}
-die Sättigungsstromdichte als Sättigungsstrom durch die Kathodenoberfläche ausgedrückt werden kann.
+als Sättigungsstromdichte, die durch den Sättigungsstrom durch die Kathodenoberfläche ausgedrückt werden kann.
 
-% Die sich somit ergebende Austrittsarbeit von Wolfram wird in \autoref{tab:arbeit} angegeben.
+Die sich somit ergebende Austrittsarbeit von Wolfram wird in \autoref{tab:arbeit} angegeben.
+\begin{table}
+  \centering
+  \caption{Berechnete Austrittsarbeiten für Wolfram.}
+  \label{tab:arbeit}
+  \begin{tabular}{c c c}
+    \toprule
+                &  $W_{\text{A}} \mathbin{/} \mathrm{eV}$ &
+                   $W_{\text{A}} \mathbin{/} \mathrm{J} \cdot 10^{-19}$ \\
+    \midrule
+    Kennlinie 1 &  3,148 & 5,043 \\
+    Kennlinie 2 &  3,142 & 5,034 \\
+    Kennlinie 3 &  3,066 & 4,913 \\
+    Kennlinie 4 &  3,074 & 4,925 \\
+    Kennlinie 5 &  3,162 & 5,066 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Damit ergibt sich für den Mittelwert und die Varianz der fünf Austrittsarbeiten zu
+\begin{equation*}
+  \overline{W_{\text{A}}} = \qty{3.12(4)}{\eV} \, .
+\end{equation*}
