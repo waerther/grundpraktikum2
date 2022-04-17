@@ -1,6 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+
 \subsection{Kennlinienschar}
 
 In \autoref{tab:kennlinien} sind die Messdaten der fünf Kennlinien aufgetragen.
@@ -105,6 +106,7 @@ mithilfe des Wendepunktes berechnet.
   \text{Kennlinie 5} : \quad I_\text{S} &= \qty{2,10}{\milli\ampere}
 \end{align*}
 
+
 \subsection{Raumladungsgesetz}
 
 Um die Gültigkeit des Raumladungsgesetzes zu überprüfen wird bei der Kennlinie mit
@@ -120,6 +122,7 @@ Die Konstanten werden nach \cite{constants} eingesetzt, die dadurch bestimmten P
   b &= (\num{1.467(0.020)}) \, . 
 \end{align*}
 Die sich so ergebende Funktion wird in \autoref{fig:k5} eingezeichnet.
+
 
 \subsection{Anlaufstromgebiet}
 
@@ -167,6 +170,7 @@ Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{3079(568)}
   \label{fig:anlaufstrom}
 \end{figure}
 
+
 \subsection{Kathodentemperatur}
 
 Die Kathodentemperaturen der verschiedenen Kennlinien werden durch eine Betrachtung der Leistungsbilanz bestimmt.
@@ -184,7 +188,42 @@ hierbei ist $\sigma=5,7 \cdot 10^{-12} \frac{\mathrm{W}}{\mathrm{cm}^{2} \mathrm
 $f=$ $0,32 \mathrm{cm}^{2}$ die Kathodenoberfläche und $\eta=0,28$ der Emissionsgrad der Oberfläche. 
 Daraus ergibt sich insgesamt
 \begin{align*}
-N_{\mathrm{zu}} &=N_{\mathrm{W}}+N_{\mathrm{WL}} \\
-\Leftrightarrow \quad U_{\mathrm{Heiz}} I_{\mathrm{Heiz}} &=f \eta \sigma T^{4}+N_{\mathrm{WL}}
+N_{\text{zu}} &=N_{\text{W}}+N_{\text{WL}} \\
+\Leftrightarrow \quad U_{\text{Heiz}} I_{\text{Heiz}} &=f \eta \sigma T^{4}+N_{\text{WL}}
 \end{align*}
-Wird die Gleichung nach der Temperatur $T$ umgeformt lassen sich die verschiedenen Temperaturen bestimmen.
+Mit der daraus nach $T$ umgeformten Gleichung
+\begin{align*}
+  T &= \sqrt[4]{ \frac {U_\text{Heiz} I_\text{Heiz} - N_\mathrm{WL}} {f \eta \sigma} } 
+\end{align*}
+ergeben sich die in \autoref{tab:temp} dargestellten Werte für die Kathodentemperaturen.
+\begin{table}
+  \centering
+  \caption{Berechnete Temperaturen der Kathoden zu den verschiedenen Heiztrömen und -spannungen.}
+  \label{tab:temp}
+  \begin{tabular}{c c c}
+    \toprule
+    $U_\text{Heiz} \mathbin{/} \unit{\volt}$ &
+    $I_\text{Heiz} \mathbin{/} \unit{\ampere}$ &
+    $T \mathbin{/} \unit{\kelvin}$ \\
+    \midrule
+    5,0 &  2,1 & 2076,75 \\
+    4,5 &  1,9 & 1960,83 \\
+    4,9 &  2,0 & 2037,39 \\
+    5,5 &  2,2 & 2159,16 \\
+    6,2 &  2,4 & 2283,24 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Austrittsarbeit des Kathodenmaterials}
+
+Zut Berechnung der Austrittsarbeit der Elektronen wird die Richardson-Gleichung \ref{eq:Richardson} nach
+$e_{0} \Phi$ umgestellt
+\begin{equation*}
+  W_{\text{A}} = e_{0} \Phi = -T k_{\text{B}} \ln \left(\frac{j_{\text{S}} h^{3}}{4 \pi e_{0} m_{0} k_{\text{B}}^{2} T^{2}}\right)
+  \quad \text{wobei} \quad
+  j_\text{S} = \frac{I_\text{S}}{f}
+\end{equation*}
+die Sättigungsstromdichte als Sättigungsstrom durch die Kathodenoberfläche ausgedrückt werden kann.
+
+% Die sich somit ergebende Austrittsarbeit von Wolfram wird in \autoref{tab:arbeit} angegeben.

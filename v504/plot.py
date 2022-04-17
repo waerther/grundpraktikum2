@@ -83,7 +83,7 @@ plt.ylim(-0.1, 2.3)
 plt.savefig('build/plot_k5.pdf', bbox_inches = "tight")
 plt.clf() 
 
-# plot 6: Aufgabe d
+# plot 6: Aufgabe d)
 md2 = pd.read_csv('tables/md2.csv')
 np.savetxt('tables/md2.txt', md2.values, fmt='%.4f')
 U, I = np.genfromtxt('tables/md2.txt', unpack=True)
@@ -109,3 +109,7 @@ plt.ylim(-0.5, 9)
 
 plt.savefig('build/plot6.pdf', bbox_inches = "tight")
 plt.clf()
+
+# Tabelle für Temperaturberechnung
+md3 = pd.read_csv('tables/md3.csv')
+np.savetxt('tables/md3.txt', md3.values, fmt='%.1f')

@@ -22,7 +22,7 @@ v704:
 us3:
 	make -C us3
 
-us2:
+us1:
 	make -C us1
 
 v606:
