@@ -1,14 +1,15 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Auftragen der Messwerte}
 Zunächst werden die Grenzspannungen $U_G$ der jeweiligen Spektrallinien bestimmt.
 Dafür werden in \autoref{fig:spek1} bis \autoref{fig:spek5} die Gegenspannungen gegen die Wurzel des Stroms aufgetragen.
 Die jeweiligen Messwerte dazu sind in den Tabellen \ref{tab:spek1} - \ref{tab:spek5} zu finden.
-Die Ausgleichsgerade wird über den Ansatz 
+Die Grenzspannung wird durch den Ansatz
 \begin{equation*}
-  U_G = - \frac{a}{b}
+  U_G = - \frac{b}{a}
 \end{equation*}
-berechnet.
+berechnet, da es sich um eine Gerade handelt.
 Für die Ausgleichsgerade ergeben sich die in \autoref{tab:paramgeraden} errechneten Werte.
 
 \begin{table}
@@ -19,11 +20,11 @@ Für die Ausgleichsgerade ergeben sich die in \autoref{tab:paramgeraden} errechn
     \hline
     Farbe & $a$ & $b$ & $U_\text{G}$ \\
     \hline
-    Ultraviolett   &  -1.057 ± 0.042   &1.228 ± 0.031 &   tbd\\
-    Violett &   -7.852 ± 0.359  & 8.150 ± 0.243   & tbd\\
-    Grün &-10.710 ± 0.526 & 6.162 ± 0.201 &  tbd\\
-    Gelb    & -4.480 ± 0.203 & 2.132 ± 0.065 &  tbd\\
-    Rot &   -0.167 ± 0.008  & 0.077 ± 0.002 & tbd\\
+    Ultraviolett   &  -0.832 ± 0.029   & 1.188 ± 0.021 &   1.430 ± 0.060\\
+    Violett &   -2.491 ± 0.088  & 3.078 ± 0.059   & 1.24 ± 0.05\\
+    Grün & -3.949 ± 0.164 & 2.711 ± 0.063 & 0.687 ± 0.033\\
+    Gelb    & -2.856 ± 0.120 & 1.599 ± 0.039 & 0.560 ± 0.039\\
+    Rot &  -0.531 ± 0.033  & 0.302 ± 0.010 & 0.570 ± 0.040\\
     \hline
    \end{tabular}
 \end{table}
@@ -184,3 +185,56 @@ Für die Ausgleichsgerade ergeben sich die in \autoref{tab:paramgeraden} errechn
   \caption{Regressionsgerade der roten Linie.}\label{fig:spek5}
   \includegraphics[width=0.8\linewidth]{pictures/spek5.pdf}
 \end{figure}
+
+\subsection{Ermittlung von dem Verhältnis$h / e_0$ und der Austrittsarbeit $A_k$}
+
+Nun wird in \autoref{fig:austritt} die Frequenz $\nu$ gegen die Grenzspannung auf der y-Achse aufgetragen.
+Die Frequenz berechnet sich durch
+\begin{equation}
+  \nu = \frac{c}{\lambda}.
+\end{equation}
+c ist dabei die Lichtgeschwindigkeit und \lambda ist die Wellenlänge.
+Die Wellenlängen sind auf dem Praktikumsblatt \cite{v500} zu finden.
+%Die Daten für die rote Linie wurde aus einer anderen Seite genommen.
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur Bestimmung der Austrittsarbeit, sowie des Verhältnisses $\frac{h}{e_0}$.}
+  \label{tab:austritt}
+  \begin{tabular}{c c c}
+    \toprule
+    $U_G$ / V & $\lambda / 10^{-9}$ & $\nu / 10^{12} \unit\hertz$ \\
+    \midrule
+    1.430 & 365 & 821.9\\
+    1.24 & 436 & 983.6\\
+    0.687 & 546 & 549.4\\
+    0.560 & 579 & 519.9\\
+    0.570 & 644 & 465.8\\ % Quelle https://www.praktikumphysik.uni-hannover.de/fileadmin/praktikumphysik/Versuche/HF/D-Optik/D08_HF.pdf
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+  \center
+  \caption{Regressionsgerade zur Bestimmung der Austrittsarbeit.}\label{fig:austritt}
+  \includegraphics[width=0.8\linewidth]{pictures/austritt.pdf}
+\end{figure}
+
+Für die Regressionsgerade ergeben sich die Werte
+
+\begin{align}
+  a = \frac{h}{e_0} &= (2.74 ± 0.36) \cdot 10^{-13} \unit{\eV} \\
+  &\text{und} \\
+  |b| = A_K &= (0.78 ±  0.22) \unit{\eV}.
+\end{align}
+
+\subsection{Photostrom in Abhängigkeit der angelegten Spannung am Beispiel der gelben Linie}
+\begin{figure}
+  \center
+  \caption{Messdaten des Photostromes der gelben Linie.}\label{fig:spek4s}
+  \includegraphics[width=0.8\linewidth]{pictures/spek4s.pdf}
+\end{figure}
+
+Da während des Versuches die Aufnahme der Werte abgebrochen wurde, sobald der Fotostrom null wurde,
+wurde in \autoref{fig:spek4s} der Plot aus anschaulichen Gründen um einige Nullen erweitert.
+Die Messwerte sind in \autoref{tab:spek4} dargestellt, wobei die negativen Werte einer Beschleunigungsspannung gleich sind.
