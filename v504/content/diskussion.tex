@@ -2,23 +2,33 @@
 \label{sec:Diskussion}
 
 \subsection{Die Kennlinien}
-Der gemessene Strom steigt wie in \autoref{fig:k} zu erkennen immer weiter an, je höher der Heizstrom gewählt wird.
-Dies ist zu erwarten, denn aufgrund des zuvor erklärten gLühelektrischen Effektes treten bei höheren Heizströmen auch mehr Elektronen aus.
-Die Kurven sind auch der in \autoref{fig:KennlinieTheorie} dargestellten Theoriekurve einer solchen Messung ähnlich.
-Es stellt sich bei den \hyperref[fig:k]{Kennlinien \ref{fig:k1} - \ref{fig:k3}} ein deutlicher Sättigungsstrom ein.
-Bei den anderen beiden Messungen, dargestellt in \hyperref[fig:k]{Kennlinien \ref{fig:k4} - \ref{fig:k5}}, lässt sich jedoch maximal eine Tendenz erkennen. 
-Dies ist ebenfalls angedeutet durch die abflachende Extrapolation und den abgeschätzten Wendepunkt.
+Die aufgenommenen Kennlinien in \autoref{fig:k} zeigen bei höherem Heizstrom einen Anstieg des gemessenen Stromes.
+Dies ist mit dem zuvor erklärten glühelektrischen Effekt vereinbar, wonach der bei höheren Heizströmen mehr Elektronen austreten.
+Im Vergleich mir der in \autoref{fig:KennlinieTheorie} dargestellten Theoriekurve zeigt sich eine große Ähnlichkeit mit den Kennlinien.
+Während bei den Kennlinien in den \hyperref[fig:k]{Kennlinien \ref{fig:k1} - \ref{fig:k2}} sich ein deutlicher Sättigungstrom einstellt,
+lässt sich in den \hyperref[fig:k]{Kennlinien \ref{fig:k3} - \ref{fig:k5}} höchstens annähernd eine Asymptote ablesen.
+Bei ausreichend vielen Messdaten stelle sich mithilfe einer Extrapolation und einem dadurch bestimmten Wendepunkt eine bessere Möglichkeit dar,
+den Sättigungsstrom zu finden.
 
 \subsection{Überprüfung des Raumladungsgesetzes}
-Um das Raumladungsgesetz aus \autoref{eq:Langmuir} zu kontrollieren, wird der Exponent abgeschätzt und mit der Theorie verglichen.
-Nach der Messung ergibt sich ein Wert von $1.163\pm-0.034$.
-Das ergibt eine Abweichung von $22.47 \%$.
-Die hohe Abweichung ergibt sich durch die Empfindlichkeit des Gerätes beim Einstellen, denn bereits
-geringe Veränderungen am Rädchen trugen bereits zu verhältnismäßig großen Änderungen bei.
+Um das Raumladungsgesetz aus \autoref{eq:lsr} zu kontrollieren, wird der Exponent abgeschätzt und mit der Theorie verglichen.
+Nach der Messung ergibt sich der Exponent zu $b = \num{1.232(0.031)} \,$, 
+was eine Abweichung von $\qty{18}{\percent}$ vom Wert $b = 1,5$ darstellt.
+Die hohe Abweichung schließt auf die Empfindlichkeit des Gerätes beim Einstellen, denn bereits
+geringe Veränderungen am Spannungsrad oder Bewegungen außerhalb der Hochvakuum-Diode tragen merklich zur Messgenauigkeit bei.
 
 \subsection{Anlaufstromgebiet}
-Die berechnete Temperatur $T = \qty{2131(70)}{\kelvin}$ liegt innerhalb des angegebenen Intervalls
-von $1000 - 3000 \, \mathrm{K}$. Der Verlauf des Anlaufstroms in \autoref{fig:anlaufstrom} ist wie zu erwarten exponentiell
-und ähnelt sehr stark dem theretischen Verlauf in \autoref{fig:KennlinieTheorie}.
-Der einzige Unterschied ist, dass die Kurve in der Theorie steigt, aber die gemessene abfällt.
-Dies liegt daran, dass die Gegenspannung positiv aufgetragen wurde.
+Die berechnete Temperatur $T = \qty{2131(70)}{\kelvin}$ liegt innerhalb des angegebenen Intervalls von $1000 - 3000 \, \mathrm{K}$. 
+Der Verlauf des Anlaufstroms in \autoref{fig:anlaufstrom} ist wie zu erwarten exponentiell
+hat Ähnlichkeit mit dem Raumladungsgebiet des theoretischen Verlaufs in \autoref{fig:KennlinieTheorie}.
+Dabei ist anzumerken, dass die gemessene Kurve fällt, weil die Gegenspannung positiv aufgetragen wurde.
+
+\subsection{Kathodentemperatur}
+Wie auch die Stromverläufe bei den Kennlinien, steigt die Temperatur der Kathode mit höherem Heizstrom an und liegt im erwarteten Intervall.
+Fehlerquellen stellen dabei abgeschätzte Größen wie Kathodenoberfläche, 
+deren Emissionsgrad sowie die Wärmeleitung der Fadenhalterung im Bereich $N_{\text{WL}} = 0,9$ bis $1,0 \, \mathrm{W}$.
+
+\subsection{Austrittsarbeit von Wolfram}
+Die ermittelte Austrittsarbeit von Wolfram beträgt $\overline{W_{\text{A}}} = \qty{3.12(4)}{\eV} \,$, 
+dieser weicht $\qty{31}{\percent}$ vom Literaturwert $W_{\text{A, Lit}} = \qty{4.55}{\eV} \,$ \cite[14]{austrittsarbeit} ab.
+Erneut liegen die Fehlerquellen in dem Abschätzen der zuvor genannten Größen und den daraus fehlerbehafteten Temperaturen.
