@@ -1,4 +1,35 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Zunächst werden die theoretischen Grundlagen des Versuchs erklärt.
+Dafür müssen die Begriffe der Interferenz und Kohärenz erklärt werden.
+
+\subsection{Interferenz von Lichtwellen}
+Wie aus der Physik über Elektrodynamik bekannt ist, ist Licht eine elektromagnetische Welle.
+Diese Welle lässt sich über die Maxwellschen Gleichungen genau beschreiben.
+Die elektrische Feldstärke eine solchen elektromagnetischen Welle ist genau über die Gleichung
+\begin{equation}
+    \vec{E} = \vec{E_0} \text{cos}\left( kx - \omega t - \delta \right)
+\end{equation} 
+charakterisiert. Dabei ist $k = \frac{2 \pi}{\lambda}$ die Wellenzahl, $\omega$ die Kreisfrequenz und $\omega$ der Phasenwinkel.
+Die Intensität einer solchen elektromagnetischen Welle wird nach
+\begin{equation}
+    I = \text{const} |\vec{E}|^2
+\end{equation}
+berechnet. Überlagern sich zwei Wellen ergibt sich daraus für die Intensität
+\begin{equation}
+    I_\text{ges} = 2 \text{const} \vec{E}^2_0 \cdot \left( 1 + \text{cos} \left( \delta_2 - \delta_1 \right) \right).
+\end{equation}
+Anzumerken ist dabei, dass bei 
+\begin{equation*}
+    \delta_2 - \delta_1 = (2n + 1) \pi, n \in \mathbb{N}
+\end{equation*}
+die Intensität null ist.
+\subsection{Kohärentes Licht}
+Da diese Lichtquellen im Normalfall nicht von Lasern emittiert werden, sind die
+$\delta_2$ und $\delta_1$ in der Regel statistisch verteilt über die Zeit.
+Deshalb ist verschwindet der Interferenzterm und es lässt sich so keine Interferenz beobachten.
+Allerdings stehen eben solche Laser (light amplification by stimulated emission of radiation) heute zu light amplification by stimulated emission of radiation) Verfügung.
+So lässt sich \textbf{kohärentes}, interferenzfähiges Licht herstellen.
+Dieses wird durch Atome im Gleichtakt emittiert.
+Kohärentes Licht besitzt also nach diesen Eigenschaften ein festes $k, \omega$ und $\delta$.
