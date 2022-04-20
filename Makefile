@@ -7,6 +7,9 @@ v504:
 v500:
 	make -C v500
 
+v401:
+	make -C v401
+
 v407:
 	make -C v407
 
@@ -42,6 +45,7 @@ clean:
 	make -C vXXX clean
 	make -C v504 clean
 	make -C v500 clean
+	make -C v401 clean
 	make -C v407 clean
 	make -C v400 clean
 	make -C v703 clean
@@ -53,4 +57,4 @@ clean:
 	make -C us2 clean
 	make -C v602 clean
 
-.PHONY: clean vXXX clean v504 clean v500 clean 407 clean v400 clean v703 clean v704 clean us3 clean us1 clean v606 clean v601 clean us2 clean v602
+.PHONY: clean vXXX clean v504 clean v500 clean v401 clean 407 clean v400 clean v703 clean v704 clean us3 clean us1 clean v606 clean v601 clean us2 clean v602
