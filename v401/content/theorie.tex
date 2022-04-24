@@ -4,6 +4,7 @@
 Zunächst werden die theoretischen Grundlagen des Versuchs erklärt.
 Dafür müssen die Begriffe der Interferenz und Kohärenz erklärt werden.
 
+
 \subsection{Interferenz von Lichtwellen}
 Wie aus der Physik über Elektrodynamik bekannt ist, ist Licht eine elektromagnetische Welle.
 Diese Welle lässt sich über die Maxwellschen Gleichungen genau beschreiben.
@@ -25,6 +26,8 @@ Anzumerken ist dabei, dass bei
     \delta_2 - \delta_1 = (2n + 1) \pi, n \in \mathbb{N}
 \end{equation*}
 die Intensität null ist.
+
+
 \subsection{Kohärentes Licht}
 Da diese Lichtquellen im Normalfall nicht von Lasern emittiert werden, sind die
 $\delta_2$ und $\delta_1$ in der Regel statistisch verteilt über die Zeit.
@@ -39,7 +42,7 @@ Kohärentes Licht besitzt also nach diesen Eigenschaften ein festes $k, \omega$ 
 \begin{figure}
     \centering
     \includegraphics[width=0.8 \linewidth]{pictures/Michelson1.pdf}
-    \caption{Der grundlegende Aufbau eines Michelson Interferometers.}
+    \caption{Der grundlegende Aufbau eines Michelson Interferometers. \cite{v401}}
     \label{fig:Michelson1}
 \end{figure}
 
@@ -55,17 +58,18 @@ Weiterhin wird eine Kompensationsplatte zwischen P und S$_2$ eingebaut, um den l
 Der Lichtstrahl nach S$_1$ muss nämlich 3 Mal durch P durch, der andere jedoch nur einmal.\\
 Wird nun ein Spiegel um die Länge $\increment d$ verschoben, ändert sich die Intensität am Schirm, beziehungsweise D.
 Es gilt die Formel
-\begin{equation}
+\begin{equation} \label{eq:delta_d}
     \increment d = z \cdot \frac{\lambda}{2}.
 \end{equation}
 z beschreibt dabei die Anzahl der auftretenden Helligkeitsmaxima.
+
 
 \subsection{Bestimmung des Brechungsindex n}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.4 \linewidth]{pictures/Michelson2.pdf}
-    \caption{Der Aufbau eines Michelson Interferometers für die Messung eines Brechungsindizes.}
+    \caption{Der Aufbau eines Michelson Interferometers für die Messung eines Brechungsindizes. \cite{v401}}
     \label{fig:Michelson2}
 \end{figure}
 
@@ -80,7 +84,7 @@ Es gilt
 \end{equation}
 Für den Brechungsindex lässt sich durch die Dispersionstheorie 
 \begin{equation}
-    n = \sqrt{1 + (\lambda) N}
+    n = \sqrt{1 + f(\lambda) N}
 \end{equation}
 zeigen, wobei N die Zahl der von der Lichtwelle erzwungenen Schwingungen pro Volumeneinheit angeregten Dipolen beschreibt.
 Im sichtbaren Bereich des Lichtes, kann die Formel mit
@@ -94,7 +98,7 @@ Unter der Annahme, dass die Gase sich wie ideale Gase verhalten, gilt
 \end{equation*}
 wobei $T$ die Temperatur und $N_L$ die Loschmidtsche Zahl ist.
 Durch einige Umformungen wird die Formel
-\begin{equation}
+\begin{equation} \label{eq:index}
     n\left(p_{0}, T_{0}\right)=1+\frac{z \lambda}{2 b} \frac{T}{T_{0}} \frac{p_{0}}{p-p^{\prime}}
 \end{equation}
 gewonnen.

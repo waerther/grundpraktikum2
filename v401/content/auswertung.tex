@@ -1,3 +1,90 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Bestimmung der Wellenlänge des Lasers}
+
+Die Bestimmung der Wellenlänge nach \autoref{eq:delta_d}, 
+wobei die variierte Spiegelverschiebung bei $\increment d = \qty{5}{\milli\meter}$ beträgt.
+Zusätzlich wird neben den Interferenzmaxima $z$ die Hebelübersetzung als Faktor $\frac{1}{Ü}$ berücksichtigt,
+da die abgelesene Verschiebung des Spiegels übersetzungsbedingt von der tatsächlichen verschieden ist.
+Die Hebelübersetzung beträgt hierbei 
+\begin{equation*}
+    Ü = 5,046 \, .
+\end{equation*}
+
+Die sich somit ergebende Gleichung für die Wellenlänge ergibt sich zu
+\begin{equation} \label{eq:lambda}
+    \lambda = \frac{2 \cdot \increment d}{z} \, .
+\end{equation}
+
+Die Messdaten sowie die berechneten Wellenlängen sind in \autoref{tab:lambda} dargestellt.
+\begin{table}
+    \centering
+    \caption{Messdaten zur Berechnung der Wellenlänge des Lasers.}
+    \label{tab:lambda}
+    \begin{tabular}{c c}
+        \toprule
+        z &  $\lambda \mathbin{/} \mathrm{nm}$ \\
+        \midrule
+        600 & 3302,95 \\
+        556 & 3564,33 \\
+        430 & 4608,76 \\
+        420 & 4718,49 \\
+        560 & 3538,87 \\
+        640 & 3096,51 \\
+        866 & 2288,42 \\
+        677 & 2927,28 \\
+        566 & 3501,36 \\
+        794 & 2495,93 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Aus einer Mittelung ergibt sich die Wellenlänge des Lasers zu
+\begin{equation*}
+    \overline{\lambda} = \qty{3404.29(750.59)}{\nano\meter} \, .
+\end{equation*}
+
+
+\subsection{Berechnung des Brechungsindex von Luft}
+
+Zur Bestimmung des Brechungsindex von Luft werden zunächst die Normalbedingungen, 
+die Größe der Messzelle und die Umgebungstemperatur benötigt:
+\begin{align*}
+    \text{Normaldruck}          : \quad p_{0}   &= \qty{1,0132}{bar} \\
+    \text{Normaltemperatur}     : \quad T_{0}   &= \qty{273,15}{\kelvin} \\
+    \text{Umgebungstemperatur}  : \quad T       &= \qty{293.15}{\milli\ampere} \\
+    \text{Größe der Messzelle}  : \quad b       &= \qty{50}{\milli\meter} 
+\end{align*}
+
+Die Berechnung nach \autoref{eq:index} unter diesen Normalbedingungen bei einem angenommenen Kammerdruck von $p = p_{0}$
+und einem erniedrigtem Druck $p' = \qty{600}{mbar}$ erfolgt schließlich durch
+\begin{equation}
+    n\left(p_{0}, T_{0}\right)=1+\frac{z \overline{\lambda}}{2 b} \frac{T}{T_{0}} \frac{p_{0}}{p_{0}-p^{\prime}} \, .
+\end{equation}
+
+Die gemessenen Interferenzmaxima und die berechneten Berechnungsindizes sind in \autoref{tab:indizes} dargestellt.
+\begin{table}
+    \centering
+    \caption{Messdaten zur Berechnung des Brechungsindex von Luft.}
+    \label{tab:indizes}
+    \begin{tabular}{c c}
+        \toprule
+           z &        n \\
+        \midrule
+        80 & 1,071670 \\
+        30 & 1,026876 \\
+        50 & 1,044794 \\
+        34 & 1,030460 \\
+        34 & 1,030460 \\
+        41 & 1,036731 \\
+        34 & 1,030460 \\
+        35 & 1,031356 \\
+        \bottomrule
+    \end{tabular} 
+\end{table}
+
+Eine Mittelung dieser Werte ergibt einen Brechungsindex von
+\begin{equation*}
+    \overline{n} = \qty{1.038(0.014)} \, .
+\end{equation*}
