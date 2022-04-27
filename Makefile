@@ -57,4 +57,4 @@ clean:
 	make -C us2 clean
 	make -C v602 clean
 
-.PHONY: clean vXXX clean v504 clean v500 clean v401 clean 407 clean v400 clean v703 clean v704 clean us3 clean us1 clean v606 clean v601 clean us2 clean v602
+.PHONY: clean vXXX clean v504 clean v500 clean v401 clean v407 clean v400 clean v703 clean v704 clean us3 clean us1 clean v606 clean v601 clean us2 clean v602
