@@ -90,7 +90,7 @@ Zur Bestimmung des Sättigungstroms $I_{\text{S}}$ werden die Messdaten in \auto
   \label{fig:k5}
   \end{subfigure}
 
-  \caption{Die fünf Kennlinien mit den jeweils angelegten Heiztrömen.}
+  \caption{Die fünf Kennlinien mit den jeweils angelegten Heizströmen.}
   \label{fig:k}
 
 \end{figure}
@@ -114,8 +114,8 @@ Dabei werden der Faktor $\frac{1}{a^{2}}$ und der Exponent $b$ als freie Paramet
 \end{equation*}
 Die dadurch bestimmten Parameter ergeben sich zu
 \begin{align*}
-  a &= (\num{-17.475(1.148)}) \cdot 10^{-3} \\
-  b &= (\num{1.232(0.031)}) \, . 
+  a &= (\num{-17.5(1.1)}) \cdot 10^{-3} \\
+  b &= (\num{1.20(0.03)}) \, . 
 \end{align*}
 Die sich so ergebende Funktion wird in \autoref{fig:k5} eingezeichnet.
 
@@ -123,7 +123,7 @@ Die sich so ergebende Funktion wird in \autoref{fig:k5} eingezeichnet.
 \subsection{Anlaufstromgebiet}
 
 In \autoref{tab:anlaufstrom} sind die Messdaten des Anlaufstromgebietes eingetragen. Dabei wurde
-eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
+eine Heizspannung von $I_{\text{Heiz}} = \qty{2.5}{\ampere}$ gewählt.
 \begin{table}
   \centering
   \caption{Messwerte des Anlaufstroms.}
@@ -133,7 +133,7 @@ eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
     $U \mathbin{/} \unit{\volt}$ &
     $I \mathbin{/} \unit{\nano\ampere}$ \\
     \midrule
-    0,00 & 7,0000 \\
+    0,00 & 13,0000 \\
     0,10 & 8,1000 \\
     0,20 & 4,6500 \\
     0,30 & 2,5000 \\
@@ -150,14 +150,17 @@ eine Heizspannung von $I_{\text{Heiz}} = \qty{2.4}{\ampere}$ gewählt.
 
 Mithilfe dieser Messdaten wird eine Ausgleichsrechung nach \autoref{eq:anlaufstromgebiet}
 \begin{equation}
-  I=a \cdot \exp \left(\frac{-e_{0} U}{k_{\text{B}} \cdot b}\right)
+  I=a \cdot \exp \left(\frac{-e_{0} U_\text{korr}}{k_{\text{B}} \cdot b}\right)
 \end{equation}
-durchgeführt und in \autoref{fig:anlaufstrom} dargestellt. Die Parameter ergeben sich dabei zu
+durchgeführt und in \autoref{fig:anlaufstrom} dargestellt.
+Hierbei ist darauf zu achten, dass die Spannung aufgrund des Innenwiderstands von $R_\text{i} = \qty{1}{\mega\ohm}$
+am Nanoamperemeter abfällt und daher zu $U_\text{korr} = U + I \cdot R_\text{i}$ korrigiert werden.
+Die Parameter ergeben sich dabei zu
 \begin{align*}
-  a &= \qty{13.228(0.240)}{\nano\ampere} \, , \\
-  b &= \qty{2131(70)}{\kelvin} \, . 
+  a &= \qty{14.2(0.3)}{\nano\ampere} \, , \\
+  b &= \qty{2055(62)}{\kelvin} \, . 
 \end{align*}
-Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{2131(70)}{\kelvin}$ .
+Dabei entspricht der Parameter $b$ der gesuchten Temperatur $T = \qty{2055(62)}{\kelvin}$ .
 
 \begin{figure}[H]
   \centering
@@ -177,7 +180,7 @@ Die zugeführte Leistung beträgt
 Diese wird über Wärmestrahlung und Wärmeleitung abgegeben. 
 Die Wärmeleitung der Fadenhalterung wird durch $N_{\text{WL}} = \qty{1}{\watt}$ abgeschätzt. 
 
-Die Srahlungsleistung ergibt sich nach dem Stefan-Boltzmannschen Gesetz zu
+Die Strahlungsleistung ergibt sich nach dem Stefan-Boltzmannschen Gesetz zu
 \begin{equation*}
   N_{\mathrm{W}}=f \eta \sigma T^{4} \, .
 \end{equation*}

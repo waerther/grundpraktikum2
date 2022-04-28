@@ -87,6 +87,7 @@ plt.clf()
 md2 = pd.read_csv('tables/md2.csv')
 np.savetxt('tables/md2.txt', md2.values, fmt='%.4f')
 U, I = np.genfromtxt('tables/md2.txt', unpack=True)
+U = U + I * 1e-9 * 1e6     # Korregierte Spannung wegen Widerstand von 1MOhm
 
 plt.plot(U, I, 'xr', label = "Messdaten",  alpha = 0.7)
 
