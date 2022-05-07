@@ -46,3 +46,35 @@ plt.grid(True)                          # grid style
 
 plt.savefig('build/plot1.pdf', bbox_inches = "tight")
 plt.clf() 
+
+
+# plot 2
+
+md2 = md.iloc[:, [1, 2]]
+np.savetxt('tables/b.txt', md2.values, header='N I/μA', fmt='%.3f')
+N, I = np.genfromtxt('tables/b.txt', unpack=True, skip_header=1)
+t = 120      # Integrationszeit in s 
+
+# einfallende Teilchen
+e = const.e
+def z(i, n):
+    return i/(e*n)
+
+fI = 0.05       # Fehler des Stroms in μA
+uI = uarray(I, fI)
+
+fN = sqrt(N)
+uN = uarray(N, fN)
+uN = uN/t
+
+Z = z(uI, uN)
+
+plt.errorbar(I, noms(Z), yerr = stds(Z), fmt='r.', elinewidth = 1, capsize = 2, label = 'Freigesetzte Ladungen')
+
+plt.xlabel(r'$I \, / \, \mathrm{μA}$')
+plt.ylabel(r'$Z \, / \, \mathrm{e}$')
+plt.legend(loc="best")                  # legend position
+plt.grid(True)                          # grid style
+
+plt.savefig('build/plot2.pdf', bbox_inches = "tight")
+plt.clf() 
