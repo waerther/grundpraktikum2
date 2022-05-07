@@ -9,21 +9,7 @@ from uncertainties.unumpy import (nominal_values as noms,   # Wert:             
 from uncertainties import unumpy as unp 
 import scipy.constants as const
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+# Plot 1:
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
-plt.legend(loc='best')
-
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.savefig('build/plot.pdf', bbox_inches = "tight")
+plt.savefig('build/plot1.pdf', bbox_inches = "tight")
 plt.clf() 
