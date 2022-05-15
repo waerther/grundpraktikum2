@@ -11,14 +11,31 @@ wobei sich der Fehler nach der Poissonverteilung richtet und somit durch $\incre
 Daraus erfolgt dann eine Aktivitätsrate von $A_0 = 1.07 \pm 0.034 \frac{1}{\unit\second}$, wobei der Fehler nach
 der Formel in \autoref{eq:fehlerfortplanzung} berechnet wurde.
 
-Nun soll der Absorptionskoeffizient von Eisen und Kupfer bestimmt werden.
+Nun soll der Absorptionskoeffizient von Blei und Kupfer bestimmt werden.
 
-\subsubsection*{Absorptionskoeffizient von Eisen}
+\subsubsection*{Absorptionskoeffizient von Blei}
 
-Die Messdaten zu der Messung von Eisen ist in \autoref{tab:md1blei} zu finden.
+Die Messdaten zu der Messung von Blei ist in \autoref{tab:md1blei} zu finden.
+Logarithmisch aufgetragen sind die Messdaten und der Fit in \autoref{fig:plot1} zu finden.
+Daraus ergeben sich auch der experimentell ermittelte Absorbtionskoeffizient, welcher als Betrag der negativen Steigung der Geraden approximiert wird, und die Anfangsaktivität.
+Diese sind
+\begin{align*}
+    \text{Absorbtionskoeffizient:} && \mu &= (95.25 \pm 2.74) \frac{1}{\unit\meter},\\
+    \text{Anfangsaktivität} && A_0 &= (119.79 \pm 2.57) \frac{1}{\unit\meter}.
+\end{align*} 
+Wird nun der Wirkungsquerschnitt über \autoref{eq:Compton} mit $\epsilon = 1-295$ berechnet,
+folgt mit $M_\text{Blei} = 207.2 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_\text{Blei} = 11.34 \unit{\gram\centi\meter^{-3}}$
+\begin{equation}
+    \mu_\text{Theorie} = 69.34 \frac{1}{\unit\meter}.
+\end{equation}
 
 
-
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7 \linewidth]{build/plot1.pdf}
+    \caption{Die Messwerte von Blei mitsamt der Regression.}
+    \label{fig:plot1}
+\end{figure}
 
 
 \begin{table}
@@ -39,11 +56,32 @@ Die Messdaten zu der Messung von Eisen ist in \autoref{tab:md1blei} zu finden.
            40,2 &  500 &  1960 $\pm$ 40  &  2.85  $\pm$ 0.09 \\
         \bottomrule
     \end{tabular}
-    \caption{Messdaten des Absorptionskoeffizienten für Eisen}
+    \caption{Messdaten des Absorptionskoeffizienten für Blei}
     \label{tab:md1blei}
 \end{table}
 
 \subsubsection*{Absorptionskoeffizient von Kupfer}
+
+Analog zu Blei wird nun auch für Kupfer der Absorbtionskoeffizient bestimmt.
+Die entsprechenden Messdaten sind in \autoref{tab:md2kupfer} notiert und der Plot sowie der Fit sind in \autoref{fig:plot2} aufgetragen.
+Aus der Ausgleichsrechnung ergeben sich dann die Werte
+\begin{align*}
+    \text{Absorbtionskoeffizient:} && \mu &= (-37.32 \pm 2.89) \frac{1}{\unit\meter},\\
+    \text{Anfangsaktivität} && A_0 &= (114.11 \pm 2.17) \frac{1}{\unit\meter}.
+\end{align*} 
+Nun wird auch der theoretische Wirkungsquerschnitt von Kupfer berechnet.
+Mit $M_\text{Blei} = 63.55 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_\text{Blei} = 8.95 \unit{\gram\centi\meter^{-3}}$ folgt
+\begin{equation}
+    \mu_\text{Theorie} = 63.1 \frac{1}{\unit\meter}.
+\end{equation}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7 \linewidth]{build/plot2.pdf}
+    \caption{Die Messwerte von Kupfer mitsamt der Regression.}
+    \label{fig:plot2}
+\end{figure}
 
 \begin{table}
     \center
@@ -69,23 +107,51 @@ Die Messdaten zu der Messung von Eisen ist in \autoref{tab:md1blei} zu finden.
 
 \subsection[Beta-Strahlung]{$\beta$-Strahlung}
 
+In \autoref{tab:md3alu} sind die Messwerte der Betastrahlung zu finden.
+Diese sind in \autoref{fig:plot3} aufgetragen.
+Dabei wurde wie in \autoref{fig:massenbelegung} die Regression in zwei Bereiche unterteilt.
+Der Schnittpunkt dieser beiden Regressionsgeraden ergibt dann den Wert für $R_\text{max}$.
+Für die Regressionsgeraden ergeben sich die Werte 
+\begin{align*}
+    a_1&=& 0.61 &&\pm&& 0.06,\\
+    b_2&=& -2.60 &&\pm&& 0.02,\\
+    a_3&=& -16.46 &&\pm&& 6.41,\\
+    b_4&=& 4.34 &&\pm&& 0.92.
+\end{align*}
+Daraus folgt dann mit
+\begin{equation*}
+    R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0.41 \pm 0.16) \frac{\unit{\kilo\gram}}{\unit{\meter^2}} ,
+\end{equation*}
+woraus sofort mit \autoref{eq:Emax} 
+\begin{equation*}
+    E_\text{max} = (0.97+/-0.32) \unit{\mega\eV}
+\end{equation*}
+folgt.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7 \linewidth]{build/plot3.pdf}
+    \caption{Die Messwerte von Aluminium bei Betastrahlung und die Regressionsgeraden.}
+    \label{fig:plot3}
+\end{figure}
+
+
 \begin{table}
     \center
     \begin{tabular}{c c c c}
         \toprule
         $d / \unit{\micro\meter}$ &  $t / \unit\second$ &     n & $A(D) - A_0 \frac{1}{\unit\second}$\\
         \midrule
-                100 &    200 &   2000  $\pm$  40 &   9.42 $\pm$ 0.23 \\
-                125 &    200 &   1830  $\pm$  40 &   8.57 $\pm$ 0.21 \\
-                153 &    200 &   2010  $\pm$  40 &   9.49 $\pm$ 0.23 \\
-                160 &    200 & 1113 $\pm$ 33 &   4.98 $\pm$ 0.17 \\
-                200 &    400 &  843 $\pm$ 29 &   1.52 $\pm$ 0.07 \\
-                253 &    400 &  325 $\pm$ 18 &   0.23 $\pm$ 0.04 \\
-                302 &    400 &  302 $\pm$ 17 &   0.17 $\pm$ 0.04 \\
-                338 &    500 &  337 $\pm$ 18 &   0.09 $\pm$ 0.04 \\
-                400 &    500 &  339 $\pm$ 18 &   0.09 $\pm$ 0.04 \\
-                444 &    500 &  340 $\pm$ 18 &   0.10 $\pm$ 0.04 \\
-                482 &    500 &  297 $\pm$ 17 &   0.011$\pm$ 0.034\\
+                100 $\pm$ 0&    200 &   2000  $\pm$  40 &   9.42 $\pm$ 0.23 \\
+                125 $\pm$ 0&    200 &   1830  $\pm$  40 &   8.57 $\pm$ 0.21 \\
+                153 $\pm$ 0.5&    200 &   2010  $\pm$  40 &   9.49 $\pm$ 0.23 \\
+                160 $\pm$ 1&    200 & 1113 $\pm$ 33 &   4.98 $\pm$ 0.17 \\
+                200 $\pm$ 1&    400 &  843 $\pm$ 29 &   1.52 $\pm$ 0.07 \\
+                253 $\pm$ 1&    400 &  325 $\pm$ 18 &   0.23 $\pm$ 0.04 \\
+                302 $\pm$ 1&    400 &  302 $\pm$ 17 &   0.17 $\pm$ 0.04 \\
+                338 $\pm$ 5&    500 &  337 $\pm$ 18 &   0.09 $\pm$ 0.04 \\
+                400 $\pm$ 1&    500 &  339 $\pm$ 18 &   0.09 $\pm$ 0.04 \\
+                444 $\pm$ 2&    500 &  340 $\pm$ 18 &   0.10 $\pm$ 0.04 \\
+                482 $\pm$ 1&    500 &  297 $\pm$ 17 &   0.011$\pm$ 0.034\\
         \bottomrule
     \end{tabular}
     \caption{Messdaten des Absorptionskoeffizienten für Aluminium}
