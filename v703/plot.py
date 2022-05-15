@@ -53,14 +53,16 @@ plt.clf()
 md2 = md.iloc[:, [1, 2]]
 np.savetxt('tables/b.txt', md2.values, header='N I/μA', fmt='%.3f')
 N, I = np.genfromtxt('tables/b.txt', unpack=True, skip_header=1)
+I *= 1e-6
 t = 120      # Integrationszeit in s 
 
 # einfallende Teilchen
-e = const.e
+e = const.elementary_charge
 def z(i, n):
+    e = const.elementary_charge
     return i/(e*n)
 
-fI = 0.05       # Fehler des Stroms in μA
+fI = 0.05*1e-6       # Fehler des Stroms in μA
 uI = uarray(I, fI)
 
 fN = sqrt(N)
@@ -71,7 +73,7 @@ Z = z(uI, uN)
 
 plt.errorbar(I, noms(Z), yerr = stds(Z), fmt='r.', elinewidth = 1, capsize = 2, label = 'Freigesetzte Ladungen')
 
-plt.xlabel(r'$I \, / \, \mathrm{μA}$')
+plt.xlabel(r'$I \, / \, \mu A$')
 plt.ylabel(r'$Z \, / \, \mathrm{e}$')
 plt.legend(loc="best")                  # legend position
 plt.grid(True)                          # grid style
