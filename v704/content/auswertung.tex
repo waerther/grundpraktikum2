@@ -1,7 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Im folgenden werden wir uns mit der Auswertung der Messdaten beschäftigen.
+Im Folgenden wird sich mit der Auswertung der Messdaten auseinandergesetzt.
 
 \subsection[Gamma-Strahlung]{$\gamma$-Strahlung}
 
@@ -17,11 +17,11 @@ Nun soll der Absorptionskoeffizient von Blei und Kupfer bestimmt werden.
 
 Die Messdaten zu der Messung von Blei ist in \autoref{tab:md1blei} zu finden.
 Logarithmisch aufgetragen sind die Messdaten und der Fit in \autoref{fig:plot1} zu finden.
-Daraus ergeben sich auch der experimentell ermittelte Absorbtionskoeffizient, welcher als Betrag der negativen Steigung der Geraden approximiert wird, und die Anfangsaktivität.
+Daraus ergeben sich auch der experimentell ermittelte Absorptionskoeffizient, welcher als Betrag der negativen Steigung der Geraden approximiert wird, und die Anfangsaktivität.
 Diese sind
 \begin{align*}
-    \text{Absorbtionskoeffizient:} && \mu &= (95.25 \pm 2.74) \frac{1}{\unit\meter},\\
-    \text{Anfangsaktivität} && A_0 &= (119.79 \pm 2.57) \frac{1}{\unit\meter}.
+    \text{Absorptionskoeffizient:} && \mu &= (95.25 \pm 2.74) \frac{1}{\unit\meter},\\
+    \text{Anfangsaktivität:} && A_0 &= (119.79 \pm 2.57) \frac{1}{\unit\meter}.
 \end{align*} 
 Wird nun der Wirkungsquerschnitt über \autoref{eq:Compton} mit $\epsilon = 1-295$ berechnet,
 folgt mit $M_\text{Blei} = 207.2 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_\text{Blei} = 11.34 \unit{\gram\centi\meter^{-3}}$
@@ -38,8 +38,10 @@ folgt mit $M_\text{Blei} = 207.2 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $
 \end{figure}
 
 
-\begin{table}
-    \center
+\begin{table}[H]
+    \centering
+    \caption{Messdaten des Absorptionskoeffizienten für Blei}
+    \label{tab:md1blei}
     \begin{tabular}{c c c c}
         \toprule
         $d / \unit{\milli\meter}$ &  $t / \unit\second$ &     n & $A(D) - A_0 \frac{1}{\unit\second}$\\ 
@@ -56,8 +58,6 @@ folgt mit $M_\text{Blei} = 207.2 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $
            40,2 &  500 &  1960 $\pm$ 40  &  2.85  $\pm$ 0.09 \\
         \bottomrule
     \end{tabular}
-    \caption{Messdaten des Absorptionskoeffizienten für Blei}
-    \label{tab:md1blei}
 \end{table}
 
 \subsubsection*{Absorptionskoeffizient von Kupfer}
@@ -83,8 +83,10 @@ Mit $M_\text{Blei} = 63.55 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_
     \label{fig:plot2}
 \end{figure}
 
-\begin{table}
-    \center
+\begin{table}[H]
+    \centering
+    \caption{Messdaten des Absorptionskoeffizienten für Kupfer}
+    \label{tab:md2kupfer}
     \begin{tabular}{c c c c}
         \toprule
         $d / \unit{\milli\meter}$ &  $t / \unit\second$ &     n & $A(D) - A_0 \frac{1}{\unit\second}$\\
@@ -101,13 +103,12 @@ Mit $M_\text{Blei} = 63.55 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_
            16,0 &    200 & 12950 $\pm$ 110 &  63.7 $\pm$ 0.6 \\
         \bottomrule
     \end{tabular}
-    \caption{Messdaten des Absorptionskoeffizienten für Kupfer}
-    \label{tab:md2kupfer}
 \end{table}
+
 
 \subsection[Beta-Strahlung]{$\beta$-Strahlung}
 
-Bei diesem Aufbau wurde eine Impulsrate von 525 bei 900 s, woraus sich $A_0 = 0.583 \pm 0.025$ ergibt.
+Bei diesem Aufbau wurde eine Impulsrate von 525 bei 900 s gewählt, woraus sich $A_0 = 0.583 \pm 0.025$ ergibt.
 In \autoref{tab:md3alu} sind die Messwerte der Betastrahlung zu finden.
 Diese sind in \autoref{fig:plot3} aufgetragen.
 Dabei wurde wie in \autoref{fig:massenbelegung} die Regression in zwei Bereiche unterteilt.
@@ -137,7 +138,9 @@ folgt.
 
 
 \begin{table}
-    \center
+    \centering
+    \caption{Messdaten des Absorptionskoeffizienten für Aluminium}
+    \label{tab:md3alu}
     \begin{tabular}{c c c c}
         \toprule
         $d / \unit{\micro\meter}$ &  $t / \unit\second$ &     n & $A(D) - A_0 \frac{1}{\unit\second}$\\
@@ -155,6 +158,4 @@ folgt.
                 482 $\pm$ 1&    500 &  297 $\pm$ 17 &   0.011$\pm$ 0.034\\
         \bottomrule
     \end{tabular}
-    \caption{Messdaten des Absorptionskoeffizienten für Aluminium}
-    \label{tab:md3alu}
 \end{table}
