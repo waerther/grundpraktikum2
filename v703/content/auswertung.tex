@@ -141,6 +141,8 @@ Die Nachentladungszeit wird von Peak zu Peak abgelesen und ergibt ungefähr
 
 \subsection{Bestimmung der Totzeit}
 
+Die Bestimmung der Totzeit erfolgt durch die folgenden zwei Methoden.
+
 \subsubsection*{Zwei-Quellen-Methode}
 
 Für die Zwei-Quellen-Methode ergeben sich die Impulsraten nach \autoref{eq:impulsrate} zu
@@ -183,7 +185,8 @@ Auch hier ergibt sich ein Fehler der einfallen Teilchen $Z$ nach \autoref{eq:feh
 wobei der Fehler des gemessenen Strom bei $\increment I = \qty{0.05}{\micro\ampere}$ liegt.
 
 In \autoref{fig:plot2} werden die berechneten freigesetzten Ladungen graphisch dargestellt und
-aus der der Vielzahl an Messdaten in \autoref{tab:ladungen} für zehn Werte tabellarisch aufgetragen.
+aus der der Vielzahl an Messdaten aus \autoref{tab:messdaten} für zehn Werte tabellarisch in \autoref{tab:ladungen} aufgetragen.
+
 \begin{table}
     \centering
     \caption{Die aus den Anodenströmen und Impulsraten resultierenden freigesetzten Ladungen für zehn exemplarische Werte.}
@@ -208,9 +211,18 @@ aus der der Vielzahl an Messdaten in \autoref{tab:ladungen} für zehn Werte tabe
     \end{tabular}
 \end{table}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width = 0.9\linewidth]{build/plot2.pdf}
     \caption{Die freigesetzten Ladungen $Z$ pro Zählerstrom $I$.}
     \label{fig:plot2}
 \end{figure}
+Für die Ausgleichsgerade des dieser Werte mit der Geradengleichung
+\begin{equation*}
+    Z = a \cdot I + b 
+\end{equation*}
+ergeben sich die Parameter
+\begin{align*}
+    a &= \qty{5.57(0.003)e16}{\per\micro\ampere} \quad \text{und} \\
+    b &= \num{0.139(20)e10} \, .
+\end{align*}

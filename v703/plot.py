@@ -71,12 +71,27 @@ uN = uN/t
 
 Z = z(uI, uN)
 
-plt.errorbar(I, noms(Z), yerr = stds(Z), fmt='r.', elinewidth = 1, capsize = 2, label = 'Freigesetzte Ladungen')
+plt.errorbar(I, noms(Z), yerr = stds(Z), fmt='r.', elinewidth = 1, capsize = 2, label = 'Messdaten')
+
+# Ausgleichsgerade
+def g(u, a, b):
+    return a * u + b
+
+para, pcov = curve_fit(g, I, noms(Z)*1e-10)
+a, b = para; print(para)
+pcov = sqrt(np.diag(pcov))
+fa, fb = pcov 
+xx = np.linspace(0.1*1e-6, 1.3*1e-6, 10000)
+a *= 1e10; b *= 1e10
+fa *= 1e10; fb *= 1e10
+plt.plot(xx, g(xx, a, b), '-b', linewidth = 1, label = 'Ausgleichsgerade')
 
 plt.xlabel(r'$I \, / \, \mu A$')
 plt.ylabel(r'$Z \, / \, \mathrm{e}$')
 plt.legend(loc="best")                  # legend position
 plt.grid(True)                          # grid style
+plt.xlim(0.12*1e-6, 1.2*1e-6)
+plt.ylim(0.5*1e10, 7e10)
 
 plt.savefig('build/plot2.pdf', bbox_inches = "tight")
 plt.clf() 
