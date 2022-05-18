@@ -1,12 +1,9 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-Im Folgenden wird sich mit der Auswertung der Messdaten auseinandergesetzt.
-
 \subsection[Gamma-Strahlung]{$\gamma$-Strahlung}
 
-Zunächst muss wie in \ref{sec:Durchführung} beschrieben eine Nullmessung durchgeführt werden.
-Dabei ergaben sich bei einer Zeit von $t = 900 \unit\second$ eine Impulsrate von $N = 960 \pm 31$,
+Zunächst wird wie in \hyperref[sec:Durchführung]{Kapitel \ref{sec:Durchführung}} beschrieben eine Nullmessung durchgeführt werden.
+Dabei ergibt sich bei einer Zeit von $t = 900 \unit\second$ eine Impulsrate von $N = 960 \pm 31$,
 wobei sich der Fehler nach der Poissonverteilung richtet und somit durch $\increment N = \sqrt{N}$ berechnet wird.
 Daraus erfolgt dann eine Aktivitätsrate von $A_0 = 1.07 \pm 0.034 \frac{1}{\unit\second}$, wobei der Fehler nach
 der Formel in \autoref{eq:fehlerfortplanzung} berechnet wurde.
@@ -33,7 +30,7 @@ folgt mit $M_\text{Blei} = 207.2 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $
 \begin{figure}
     \centering
     \includegraphics[width=0.7 \linewidth]{build/plot1.pdf}
-    \caption{Die Messwerte von Blei mitsamt der Regression.}
+    \caption{Gemessene Impulsrate bei unterschiedlichen Absorberdicken von Blei.}
     \label{fig:plot1}
 \end{figure}
 
@@ -79,7 +76,7 @@ Mit $M_\text{Blei} = 63.55 \unit{\gram\mol^{-1}}$ \cite{molaremasse} und $ \rho_
 \begin{figure}
     \centering
     \includegraphics[width=0.7 \linewidth]{build/plot2.pdf}
-    \caption{Die Messwerte von Kupfer mitsamt der Regression.}
+    \caption{Gemessene Impulsrate bei unterschiedlichen Absorberdicken von Kupfer.}
     \label{fig:plot2}
 \end{figure}
 
@@ -112,27 +109,36 @@ Bei diesem Aufbau wurde eine Impulsrate von 525 bei 900 s gewählt, woraus sich 
 In \autoref{tab:md3alu} sind die Messwerte der Betastrahlung zu finden.
 Diese sind in \autoref{fig:plot3} aufgetragen.
 Dabei wurde wie in \autoref{fig:massenbelegung} die Regression in zwei Bereiche unterteilt.
+Für die Regression wird der Ansatz
+\begin{equation*}
+    ln(A(D)) = a \cdot D + b
+\end{equation*}
+gewählt.
 Der Schnittpunkt dieser beiden Regressionsgeraden ergibt dann den Wert für $R_\text{max}$.
-Für die Regressionsgeraden ergeben sich die Werte 
+Für die Regressionsgeraden ergeben sich die Werte:
 \begin{align*}
-    a_1= 0.61 &\pm 0.06,\\
-    b_2= -2.60 &\pm 0.02,\\
-    a_3= -16.46 &\pm 6.41,\\
-    b_4= 4.34 &\pm 0.92.
+    \text{Fit 1:}&\begin{cases}
+    a_1= -0.69 &\pm 0.25 \\
+    b_2= 0.38 &\pm 0.09 
+    \end{cases}\\
+    \text{Fit 2:}&\begin{cases}
+    a_3= 78.74 &\pm 27.54\\
+    b_4= 18.42 &\pm 4.17
+    \end{cases}
 \end{align*}
 Daraus folgt dann mit
 \begin{equation*}
-    R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0.41 \pm 0.16) \frac{\unit{\kilo\gram}}{\unit{\meter^2}} ,
+    R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0.23 \pm 0.1) \frac{\unit{\kilo\gram}}{\unit{\meter^2}} ,
 \end{equation*}
-woraus sofort mit \autoref{eq:Emax} 
+woraus mit \autoref{eq:Emax} 
 \begin{equation*}
-    E_\text{max} = (0.97+/-0.32) \unit{\mega\eV}
+    E_\text{max} = (0.62 \pm 0.2) \unit{\mega\eV}
 \end{equation*}
 folgt.
 \begin{figure}
     \centering
     \includegraphics[width=0.7 \linewidth]{build/plot3.pdf}
-    \caption{Die Messwerte von Aluminium bei Betastrahlung und die Regressionsgeraden.}
+    \caption{Gemessene Impulsrate bei unterschiedlichen Absorberdicken von Aluminium bei $\beta$-Strahlung.}
     \label{fig:plot3}
 \end{figure}
 

@@ -107,13 +107,15 @@ d=d3*1e-3
 derr = np.array([0,0,0.5,1,1,1,1,5,1,2,1]) * 1e-3
 null=Nulleffekt2
 
-ctsfit2=cts[1:7]
-dfit2 = d[1:7]
-ctsfit1=cts[7:-1]
-dfit1 = d[7:-1]
+ctsfit2=cts[0:6]
+dfit2 = d[0:6]
+ctsfit1=cts[6:-1]
+dfit1 = d[6:-1]
 
+# def f(x, a, b):
+#     return np.exp(a*x+b)
 def f(x, a, b):
-    return np.exp(a*x+b)
+    return a*x + b
 
 
 params, covariance_matrix = curve_fit(f,dfit1, ctsfit1) #,p0=(-110,0)
@@ -133,12 +135,13 @@ schnittfit2=np.linspace(0,d[10])
 plt.plot(schnittfit2, f(schnittfit2, *params), 'b-', label='Fit 2')
 
 rmax=(b2-b1)/(a1-a2)
-plt.yscale("log")
+# plt.yscale("log")
 plt.errorbar(d, cts,yerr=ctserr, xerr=derr,fmt='.k', label="Daten")
 plt.axvline(noms(rmax),color="k",label="Rmax")
 plt.legend(loc="best")
 plt.grid()
-plt.xlabel(r"D / m")
-plt.ylabel(r'$(A - A_0) / (1 / $ s $)$')
+plt.xlabel(r"D / mm")
+# plt.ylabel(r'$(A - A_0) / (1 / $ s $)$')
+plt.ylabel(r'ln(A - A_0)')
 plt.savefig('build/plot3.pdf', bbox_inches = "tight")
 plt.clf() 
