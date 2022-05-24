@@ -1,0 +1,8 @@
+dünne acrylplatte
+dicke: 6mm
+
+acrylzylinder:
+z1: l = 40,4 mm
+z2: l = 61,5 mm
+z3: l = 80,5 mm
+z4: l = 120,5 mm 
