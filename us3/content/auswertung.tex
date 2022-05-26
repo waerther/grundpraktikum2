@@ -124,7 +124,9 @@ $\nu$ in den folgenden Tabellen aufgetragen.
 
 Zur Untersuchung des Strömungsprofils wird bei einem Prismenwinkel von $\theta = \qty{15}{°}$
 für zwei Leistungen der Zentrifugalpumpe die Strömungsgeschwindigkeit und Streuintensität gemessen.
-Die Messdaten beider Leistungen sind in \autoref{tab:profil}
+Dabei entspricht eine Messtiefe von $\qty{4}{\micro\second}$ in der Dopplerflüssigkeit $\qty{10}{\milli\meter}$, 
+wodurch $x_\text{sec}$ in $x_\text{mm}$ für das Innenrohr mit dem Innendurchmesser von $\qty{10}{\milli\meter}$ umgerechnet werden kann. 
+Die Messdaten beider Leistungen sind in \autoref{tab:profil} dargestellt.
 
 \begin{table}[H]
   \centering
@@ -132,58 +134,60 @@ Die Messdaten beider Leistungen sind in \autoref{tab:profil}
   \label{tab:profil}
 
   \begin{tabular}{c c}   % top level tables, with 2 columns
-      \begin{tabular}{c c c c} 
+      \begin{tabular}{c c c} 
           \hline
           \toprule
-          $x_\text{sec} \mathbin{/} \unit{\micro\second}$ &
+           & $P = \qty{75}{\percent}$ & \\
+          \midrule
           $x_\text{mm} \mathbin{/} \unit{\milli\meter}$ &
-          $\increment \nu \mathbin{/} \mathrm{Hz}$ &
+          $v \mathbin{/} \mathrm{cm s^{-1}}$ &
           $I_\text{S} \mathbin{/} \mathrm{V^2 s^{-1}}$ \\
           \midrule
-          12,0 & 30,00 &   0,0 &  20,0 \\
-          12,5 & 31,25 & 206,0 &  40,0 \\
-          13,0 & 32,50 & 209,0 &  59,0 \\
-          13,5 & 33,75 & 220,0 &  65,0 \\
-          14,0 & 35,00 & 208,0 &  74,0 \\
-          14,5 & 36,25 & 223,0 &  82,0 \\
-          15,0 & 37,50 & 210,0 &  99,0 \\
-          15,5 & 38,75 & 209,0 & 117,0 \\
-          16,0 & 40,00 & 229,0 & 140,0 \\
-          16,5 & 41,25 & 211,0 & 130,0 \\
-          17,0 & 42,50 & 190,0 &  88,0 \\
-          17,5 & 43,75 & 189,0 &  52,0 \\
-          18,0 & 45,00 &   0,0 &  27,0 \\
-          18,5 & 46,25 &   0,0 &  19,0 \\
-          19,0 & 47,50 &   0,0 &  17,0 \\
+          0,00 &  0,0 &  20,0 \\
+          0,75 & 45,1 &  40,0 \\
+          1,50 & 53,1 &  59,0 \\
+          2,25 & 58,4 &  65,0 \\
+          3,00 & 66,3 &  74,0 \\
+          3,75 & 66,3 &  82,0 \\
+          4,50 & 63,7 &  99,0 \\
+          5,25 & 53,1 & 117,0 \\
+          6,00 & 53,1 & 140,0 \\
+          6,75 & 42,4 & 130,0 \\
+          7,50 & 37,1 &  88,0 \\
+          8,25 & 31,8 &  52,0 \\
+          9,00 &  0,0 &  27,0 \\
+          9,75 &  0,0 &  19,0 \\
+         10,50 &  0,0 &  17,0 \\
  
           \bottomrule
           \hline
       \end{tabular} &  % starting rightmost sub table
 
       % table 2
-      \begin{tabular}{c c c c} 
+      \begin{tabular}{c c c} 
           \hline
           \toprule
-          $x_\text{sec} \mathbin{/} \unit{\micro\second}$ &
+          & $P = \qty{45}{\percent}$ & \\
+          \midrule
           $x_\text{mm} \mathbin{/} \unit{\milli\meter}$ &
-          $\increment \nu \mathbin{/} \mathrm{Hz}$ &
+          $v \mathbin{/} \mathrm{cm s^{-1}}$ &
           $I_\text{S} \mathbin{/} \mathrm{V^2 s^{-1}}$ \\
           \midrule
-          12,0 & 30,00 &  0,0 &   5,0 \\
-          12,5 & 31,25 &  0,0 &  18,0 \\
-          13,0 & 32,50 &  0,0 &  24,0 \\
-          13,5 & 33,75 & 84,0 &  51,0 \\
-          14,0 & 35,00 & 78,0 &  60,0 \\
-          14,5 & 36,25 & 83,0 &  73,0 \\
-          15,0 & 37,50 & 82,0 &  81,0 \\
-          15,5 & 38,75 & 82,0 & 102,0 \\
-          16,0 & 40,00 & 82,0 &  71,0 \\
-          16,5 & 41,25 & 82,0 &  69,0 \\
-          17,0 & 42,50 & 68,0 &  39,0 \\
-          17,5 & 43,75 &  0,0 &  14,0 \\
-          18,0 & 45,00 &  0,0 &   9,0 \\
-          18,5 & 46,25 &  0,0 &   8,0 \\
-          19,0 & 47,50 &  0,0 &   7,0 \\
+          0,00 &  0,0 &   5,0 \\
+          0,75 &  0,0 &  18,0 \\
+          1,50 &  0,0 &  24,0 \\
+          2,25 & 26,5 &  51,0 \\
+          3,00 & 26,5 &  60,0 \\
+          3,75 & 26,5 &  73,0 \\
+          4,50 & 26,5 &  81,0 \\
+          5,25 & 23,9 & 102,0 \\
+          6,00 & 21,2 &  71,0 \\
+          6,75 & 18,6 &  69,0 \\
+          7,50 & 15,9 &  39,0 \\
+          8,25 &  0,0 &  14,0 \\
+          9,00 &  0,0 &   9,0 \\
+          9,75 &  0,0 &   8,0 \\
+         10,50 &  0,0 &   7,0 \\
           \bottomrule
           \hline
       \end{tabular} \\
@@ -193,7 +197,6 @@ Die Messdaten beider Leistungen sind in \autoref{tab:profil}
 
 Mithilfe dieser Daten wird für beide Geschwindigkeiten jeweils die Momentangeschwindigkeit und Streuintensität
 in Abhängigkeit der Messtiefe $x$ in \autoref{fig:profile} aufgetragen.
-
 \begin{figure}[H]
   \centering
   
@@ -228,4 +231,5 @@ in Abhängigkeit der Messtiefe $x$ in \autoref{fig:profile} aufgetragen.
   \caption{Die Strömungsprofile für die jeweiligen Leistungen.}
   \label{fig:profile}
 \end{figure}
+
 

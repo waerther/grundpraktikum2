@@ -112,24 +112,18 @@ plt.clf()
 # Daten
 p75 = pd.read_csv('tables/75p.csv')
 np.savetxt('tables/p75.txt', p75.values, header='x_sec/micros delta_nu/Hz I_s/V^2/s', fmt='%.3f')
-x_sec, dnu75, I75 = np.genfromtxt('tables/p75.txt', unpack=True, skip_header=1)
-x_mm = (10/4) * x_sec
+x_sec, v75, I75 = np.genfromtxt('tables/p75.txt', unpack=True, skip_header=1)
+x_mm = (6/4) * x_sec - 18
 
 p45 = pd.read_csv('tables/45p.csv')
 np.savetxt('tables/p45.txt', p45.values, header='x_sec/micros delta_nu/Hz I_s/V^2/s', fmt='%.3f')
-x_sec, dnu45, I45 = np.genfromtxt('tables/p45.txt', unpack=True, skip_header=1)
-
+x_sec, v45, I45 = np.genfromtxt('tables/p45.txt', unpack=True, skip_header=1)
 
 # Plot 4
-v75 = np.zeros(15)
-
-for j in range(15):
-    v75[j] = v(dnu75[j], alpha[0])
-
 plt.plot(x_mm, v75, 'xr', markersize=6 , label = 'Momentangeschwindigkeit für P = 75%')
 
 plt.xlabel(r'$x \, / \, \mathrm{mm}$')
-plt.ylabel(r'$v_{mom} \, / \, \mathrm{ms^{-1}}$')
+plt.ylabel(r'$v_{mom} \, / \, \mathrm{cms^{-1}}$')
 plt.legend(loc="best")                  
 plt.grid(True)
 
@@ -147,15 +141,10 @@ plt.savefig('build/plot5.pdf', bbox_inches = "tight")
 plt.clf() 
 
 # Plot 6
-v45 = np.zeros(15)
-
-for j in range(15):
-    v45[j] = v(dnu45[j], alpha[0])
-
 plt.plot(x_mm, v45, 'xr', markersize=6 , label = 'Momentangeschwindigkeit für P = 45%')
 
 plt.xlabel(r'$x \, / \, \mathrm{mm}$')
-plt.ylabel(r'$v_{mom} \, / \, \mathrm{ms^{-1}}$')
+plt.ylabel(r'$v_{mom} \, / \, \mathrm{cms^{-1}}$')
 plt.legend(loc="best")                  
 plt.grid(True) 
 
