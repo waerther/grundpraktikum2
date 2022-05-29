@@ -31,7 +31,7 @@ Daraus folgt für die drei Prismenwinkel die Dopplerwinkel in \autoref{tab:vorbe
 \subsection{Bestimmung der Strömungsgeschwindigkeit}
 
 Wie in \autoref{tab:winkel} dargestellt, werden aus den Messdaten die Frequenzverschiebung 
-$\increment \nu = \nu_\text{Mittel} - \nu_\text{max}$ berechnet und die Intensität aufgetragen.
+$\increment \nu = \nu_\text{Mittel} - \nu_\text{max}$ berechnet und gegen die Strömungsgeschwindigkeit aufgetragen.
 Dabei wird von einer Maximalleistung von $\text{P}_\text{max} = \qty{9000}{W} = \qty{10}{\liter\per\minute}$ ausgegangen, 
 nach der die Leistung der Zentrifugalpumpe prozentual variiert wird.
 \begin{table}
@@ -44,7 +44,7 @@ nach der die Leistung der Zentrifugalpumpe prozentual variiert wird.
     \cmidrule(lr){1-4}
     
     \multicolumn{1}{c}{$P \mathbin{/} \% $} &
-    \multicolumn{3}{c}{$-\qty{15}{°} \quad \qty{30}{°} \quad \qty{60}{°}$} \\
+    \multicolumn{3}{c}{$\qty{15}{°} \quad \qty{30}{°} \quad \qty{60}{°}$} \\
     \cmidrule(lr){1-1}\cmidrule(lr){2-4}
 
        33 &  34 &  -45 &  45 \\
@@ -56,12 +56,13 @@ nach der die Leistung der Zentrifugalpumpe prozentual variiert wird.
   \end{tabular}
 \end{table}
 
+Hierbei ist anzumerken, dass der Prismenwinkel bei $\theta  = \qty{30}{°}$ aufgrund der Durchschallungsrichtung negative Frequenzverschiebungen hervorbringt,
+weswegen im Folgenden nur der Betrag $| \increment \nu |$ betrachtet wird.
 Die Strömungsgeschwindigkeit ergibt sich mithilfe von \autoref{eq:freqvers} zu
 \begin{equation}
-  v = \frac{\increment \nu \cdot c}{2 \nu_0 \cdot \cos (\alpha)}
+  v = \frac{| \increment \nu | \cdot c}{2 \nu_0 \cdot \cos (\alpha)}
 \end{equation}
 mit der verwendeten Ultraschallsonde $\nu_0 = \qty{2}{MHz}$.
-
 Die daraus resultierenden Strömungsgeschwindigkeiten sind in \autoref{tab:strömung} dargestellt.
 \begin{table}
   \centering
@@ -73,14 +74,14 @@ Die daraus resultierenden Strömungsgeschwindigkeiten sind in \autoref{tab:strö
     \cmidrule(lr){1-4}
     
     \multicolumn{1}{c}{$P \mathbin{/} \% $} &
-    \multicolumn{3}{c}{$-\qty{15}{°} \qquad \qty{30}{°} \qquad \qty{60}{°}$} \\
+    \multicolumn{3}{c}{$\qty{15}{°} \qquad \qty{30}{°} \qquad \qty{60}{°}$} \\
     \cmidrule(lr){1-1}\cmidrule(lr){2-4}
 
-       33 & 0,148 &   -0,101 &    0,096 \\
-       50 & 0,261 &   -0,279 &    0,249 \\
-       66 & 0,608 &   -0,418 &    0,417 \\
-       83 & 0,877 &   -0,848 &    0,731 \\
-      100 & 0,960 &   -1,241 &    1,043 \\
+       33 & 0,148 &   0,101 &    0,096 \\
+       50 & 0,261 &   0,279 &    0,249 \\
+       66 & 0,608 &   0,418 &    0,417 \\
+       83 & 0,877 &   0,848 &    0,731 \\
+      100 & 0,960 &   1,241 &    1,043 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -141,7 +142,7 @@ Die Messdaten beider Leistungen sind in \autoref{tab:profil} dargestellt.
           \midrule
           $x_\text{mm} \mathbin{/} \unit{\milli\meter}$ &
           $v \mathbin{/} \mathrm{cm s^{-1}}$ &
-          $I_\text{S} \mathbin{/} \mathrm{V^2 s^{-1}}$ \\
+          $I_\text{S} \mathbin{/} \mathrm{1000 \, V^2 s^{-1}}$ \\
           \midrule
           0,00 &  0,0 &  20,0 \\
           0,75 & 45,1 &  40,0 \\
@@ -171,7 +172,7 @@ Die Messdaten beider Leistungen sind in \autoref{tab:profil} dargestellt.
           \midrule
           $x_\text{mm} \mathbin{/} \unit{\milli\meter}$ &
           $v \mathbin{/} \mathrm{cm s^{-1}}$ &
-          $I_\text{S} \mathbin{/} \mathrm{V^2 s^{-1}}$ \\
+          $I_\text{S} \mathbin{/} \mathrm{1000 \, V^2 s^{-1}}$ \\
           \midrule
           0,00 &  0,0 &   5,0 \\
           0,75 &  0,0 &  18,0 \\

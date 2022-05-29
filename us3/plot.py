@@ -133,7 +133,7 @@ plt.clf()
 # Plot 5
 plt.plot(x_mm, I75, 'xr', markersize=6 , label = 'Streuintensitäten für P = 75%')
 plt.xlabel(r'$x \, / \, \mathrm{mm}$')
-plt.ylabel(r'$I_S \, / \, \mathrm{V^2 s^{-1}}$')
+plt.ylabel(r'$I_S \, / \, 1000 \, \mathrm{V^2 s^{-1}}$')
 plt.legend(loc="best")                  
 plt.grid(True) 
 
@@ -154,7 +154,7 @@ plt.clf()
 # Plot 7
 plt.plot(x_mm, I45, 'xr', markersize=6 , label = 'Streuintensitäten für P = 45%')
 plt.xlabel(r'$x \, / \, \mathrm{mm}$')
-plt.ylabel(r'$I_S \, / \, \mathrm{V^2 s^{-1}}$')
+plt.ylabel(r'$I_S \, / \, 1000 \, \mathrm{V^2 s^{-1}}$')
 plt.legend(loc="best")                  
 plt.grid(True)  
 
