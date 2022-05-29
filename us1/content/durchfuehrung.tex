@@ -26,8 +26,8 @@ Zur Durchschallung eines Zylinders wird dieser waagerecht zwischen zwei Sonden m
 
 \subsection{Bestimmung der Dämpfung mit dem Impuls-Echo-Verfahren}
 
-Die Messung für die Bestimmung erfolgt hierbei analog zu \autoref{sec:schallecho}, 
-nur das dabei zur Messung der Amplituden darauf zu achten ist, das TGC ausgestellt und die Messung nicht verfälscht.
+Die Messung für die Bestimmung der Dämpfung erfolgt hierbei analog zu \autoref{sec:schallecho}, 
+nur das dabei zur Messung der Amplituden darauf zu achten ist, dass TGC ausgestellt und die Messung nicht verfälscht.
 
 
 \subsection{Vermessung des Augenmodells}
@@ -35,3 +35,23 @@ nur das dabei zur Messung der Amplituden darauf zu achten ist, das TGC ausgestel
 Zur Abmessung des Augenmodells (Maßstab 1:3) wird mithilfe des Impuls-Echo-Verfahrens die Laufzeit von Augeneingang zur Retina bestimmt.
 Dafür wird mit Koppelgel mit leichtem Druck auf der Hornhaut die Sonde platziert, bis ein Echo an der Rückwand der Retina zu sehen ist.
 
+
+\subsection{Vorbereitungsaufgabe}
+
+Als Vorbereitungsaufgabe soll zunächst die Schallgeschwindigkeit c verschiedener Materialien nach \cite{schallgeschw}, \cite{schallgeschw2} und \cite{schallgeschw3} angegeben werden.
+Die akustische Feldimpedanz lässt sich mithilfe der Gleichung
+\begin{equation*}
+    Z = \rho \cdot c
+\end{equation*}
+berechnen, wobei $\rho$ die Stoffdichte ist. Mit den Dichten der Stoffe nach \cite{akimpedanz} folgt somit für die Impedanzen:
+\begin{align*}
+    c_\text{Luft}           =  \qty{331}{\meter\per\second} \quad &\implies \quad Z_\text{Luft}           = \qty{0.43e5}{\kilo\gram\per\meter\squared\per\second} \\
+    c_\text{Wasser}         = \qty{1492}{\meter\per\second} \quad &\implies \quad Z_\text{Wasser}         = \qty{1.49e6}{\kilo\gram\per\meter\squared\per\second} \\
+    c_\text{Blut}           = \qty{1570}{\meter\per\second} \quad &\implies \quad Z_\text{Blut}           = \qty{1.64e6}{\kilo\gram\per\meter\squared\per\second} \\
+    c_\text{Knochen}        = \qty{3500}{\meter\per\second} \quad &\implies \quad Z_\text{Knochen}        = \qty{6.12e6}{\kilo\gram\per\meter\squared\per\second} \\
+    c_\text{Acryl}          = \qty{2730}{\meter\per\second} \quad &\implies \quad Z_\text{Acryl}          = \qty{3.22e6}{\kilo\gram\per\meter\squared\per\second} 
+\end{align*}
+Schließlich soll noch die Wellenlänge $\lambda$ und die Periode T einer $\qty{2}{MHz}$ Schwingung in Acryl angegeben werden:
+\begin{align*}
+    T = \frac{1}{\qty{2}{MHz}} = \qty{0.5e{-6}}{\second} \qquad \qquad \lambda = \frac{c}{f} = \qty{1.365e{-3}}{m}
+\end{align*}
