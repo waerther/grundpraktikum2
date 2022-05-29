@@ -11,7 +11,7 @@ Die folgenden Größen wurden für die Acrylobjekte mit einer Schieblehre ermitt
 
 \subsection{Schallgeschwindigkeit und Wellenlänge mittels des Impuls-Echo-Verfahren}
 
-Die Schallgeschwindigkeit wird über die Formel \autoref{tbd} ermittelt.
+Die Schallgeschwindigkeit wird über die Formel \autoref{eq:s} ermittelt.
 Dafür wird diese folgendermaßen umgestellt:
 \begin{equation}\label{eq:c_schall}
   c_\text{Acryl} = \frac{2}{t} \cdot d_\text{Platte}
@@ -60,26 +60,45 @@ Die Tiefenmessung des Programms ergibt dann eine Tiefe von $d = 0.6 \, \unit{\ce
 
 Die Messungen sind in \autoref{fig:echo_messungen} zu finden.
 Die daraus entnommenen Messdaten sind in \autoref{tab:echo_messungen} zu finden.
+Dabei ist für die Kombination $1 + 3$, dargestellt in \autoref{fig:echo_z1_z3} kein Peak für die entsprechende Länge zu erkennen.
+Die zu sehenden Peaks sind jeweils den einzelnen Zylindern zuzuordnen, nicht der Kombination der beiden.
+Deshalb muss diese Messung im folgenden verworfen werden.
+Um die Schallgeschwindigkeit zu bestimmen, wird der Ansatz
+\begin{equation*}
+  2 \cdot d = t \cdot c + b
+\end{equation*}
+gemacht. Die lineare Regression ist in \autoref{fig:plot1} zu finden.
+Der Ansatz ergibt die Werte
+\begin{align*}
+  c &= (2740 \pm 10)  \, \unit{\meter / \second}\\
+  &\text{und}\\
+  b &= (-2.4 \pm 0.8) \cdot 10^{-3} \, \unit{\meter / \second} \, .
+\end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.7\linewidth]{build/plot1.pdf}
+  \caption{Regressionsgerade der Messdaten des Impuls-Echo-Verfahrens.}
+  \label{fig:plot1}
+\end{figure}
 
 \begin{table}
   \centering
-  \caption{Messdaten de3s Impuls-Echo-Verfahrens.}
+  \caption{Messdaten des Impuls-Echo-Verfahrens.}
   \label{tab:echo_messungen}
-  \begin{tabular}{c | c c}
+  \begin{tabular}{c | c c c c}
       \toprule
-      Zylinder& Höhe / $\unit\meter$ & t / \unit{\micro\second}\\ 
+      Zylinder& Höhe / $\unit\meter$ & t / \unit{\micro\second} & $U_0$ & $U_t$\\ 
       \midrule
-      1     & 0.0404 & 30.3 \\
-      2     & 0.0615 & 46.0 \\
-      3     & 0.0805 & 59.5 \\
-      1 + 2 & 0.1019 & 75.5 \\
-      1 + 3 & 0.1209 &  -   \\
-      4     & 0.1205 & 88.8 \\
+      1     & 0.0404 & 30.3 & 1.31 & 0.92 \\
+      2     & 0.0615 & 46.0 & 1.31 & 0.25 \\
+      3     & 0.0805 & 59.5 & 1.31 & 0.11 \\
+      1 + 2 & 0.1019 & 75.5 & 1.31 & 0.2  \\
+      1 + 3 & 0.1209 &  -   & 1.31 & -    \\
+      4     & 0.1205 & 88.8 & 1.31 & 0.012\\
       \bottomrule
   \end{tabular}
 \end{table}
-
-
 
 \begin{figure}%
   \begin{subfigure}{0.48\textwidth}%
@@ -138,6 +157,100 @@ Die daraus entnommenen Messdaten sind in \autoref{tab:echo_messungen} zu finden.
 \end{figure}%
 
 
+\subsection{Schallgeschwindigkeitsmessung mittels des Durchschallungsverfahren}
+Da bei diesem Verfahren der Schall den jeweiligen Körper nur einmal durchläuft, ergibt sich als Ansatz für die Regression die Formel
+\begin{equation*}
+  d = t \cdot c + b \, .
+\end{equation*}
+Die Messungen sind per Screenshot gespeichert worden und sind in \autoref{fig:durchschallung_messungen} abgebildet.
+Die Messwerte sind in \autoref{tab:durchschallung_messung} aufgetragen und die Regressionsgerade ist in \autoref{fig:plot2} abgebildet.
+Aus dem Ansatz ergeben sich dann die Werte
+\begin{align*}
+  c &= (2760 \pm 36)  \, \unit{\meter / \second}\\
+  &\text{und}\\
+  b &= (-4.21 \pm 1.11) \cdot 10^{-3} \, \unit{\meter / \second} \, .
+\end{align*}
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.7\linewidth]{build/plot2.pdf}
+  \caption{Regressionsgerade der Messdaten des Durchschallungsverfahrens.}
+  \label{fig:plot2}
+\end{figure}
+
+\begin{table}
+  \centering
+  \caption{Messdaten des Durchschallungsverfahrens.}
+  \label{tab:durchschallung_messung}
+  \begin{tabular}{c | c c}
+      \toprule
+      Zylinder& Höhe / $\unit\meter$ & t / \unit{\micro\second}\\ 
+      \midrule
+      1     & 0.0404 & 16.0 \\
+      2     & 0.0615 & 23.8 \\
+      3     & 0.0805 & 31.0 \\
+      4     & 0.1205 & 45.0 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}%
+  \begin{subfigure}{0.48\textwidth}%
+  \centering%
+  \includegraphics[width=\linewidth]{pictures/Durchschallung/z1.pdf}%
+  \caption{Der erste Zylinder.}%
+  \label{fig:durchschallung_z1}%
+  \end{subfigure}%
+  \hfill%
+  \begin{subfigure}{0.48\textwidth}%
+  \centering%
+  \includegraphics[width=\linewidth]{pictures/Durchschallung/z2.pdf}%
+  \caption{Der zweite Zylinder.}%
+  \label{fig:durchschallung_z2}%
+  \end{subfigure}%
+  \hfill
+
+  \begin{subfigure}{0.48\textwidth}%
+  \centering%
+  \includegraphics[width=\linewidth]{pictures/Durchschallung/z3.pdf}%
+  \caption{Der dritte Zylinder.}%
+  \label{fig:durchschallung_z3}%
+  \end{subfigure}%
+  \hfill%
+  \begin{subfigure}{0.48\textwidth}%
+  \centering%
+  \includegraphics[width=\linewidth]{pictures/Durchschallung/z4.pdf}%
+  \caption{Der vierte Zylinder.}%
+  \label{fig:durchschallung_z4}%
+  \end{subfigure}%
+  \hfill
+  \caption{Die Messungen des Durchschallungsverfahrens}%
+  \label{fig:durchschallung_messungen}%
+\end{figure}%
+
+\subsection{Dämpfung mit dem Impuls-Echo-Verfahren}
+Als nächstes soll aus den Amplituden der Messung die Dämpfungskonstante $\alpha$ aus \autoref{eq:Intensität} bestimmt werden.
+Dafür wird in der Gleichung $x = 2 \cdot d$ gewählt und für die lineare Regression wird die Gleichung logarithmiert.
+Es ergibt sich der Ansatz
+\begin{equation*}
+  ln \left( \frac{I}{I_0} \right) = - \alpha \cdot 2 \cdot d \, .
+\end{equation*}
+Dafür werden die Messdaten der Amplitude in \autoref{tab:echo_messungen} verwendet.
+Es ergibt sich
+\begin{equation*}
+  \alpha = 28.3 \pm 1.3 \, .
+\end{equation*}
+Die Regressionsgerade ist in \autoref{fig:plot3} dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.7\linewidth]{build/plot3.pdf}
+  \caption{Regressionsgerade der Intensität in Abhängigkeit des Durchmessers.}
+  \label{fig:plot3}
+\end{figure}
+
 \subsection{Untersuchung des Augenmodells}
 
 Die entsprechende Messung zu der Vermessung des Augenmodells ist in \autoref{fig:auge} dargestellt
@@ -152,7 +265,7 @@ Dabei werden die Peaks den folgenden Bestandteilen des Auges zugeordnet:
   \text{Peak 4} &\to \text{Retina} \\  
 \end{align*}
 Mit den Schallgeschwindigkeiten $c_L = 2500 \unit{\meter / \second}$ und $c_{GK} = 1410 \unit{\meter / \second}$.
-Aus der allgemeinen Formel \ref{tbd} ergeben sich dann
+Aus der allgemeinen Formel \ref{eq:s} ergeben sich dann
 \begin{align*}
   \text{Hornhaut bis Anfang der Linse}&: s_1 = \frac{1}{2} c_{GK} \cdot t_1 = 0.846 \, \unit{\centi\meter} \\
   \text{Hornhaut bis Ende der Linse}&: s_2 = \frac{1}{2} c_L \cdot (t_2 - t_1) + s_1 = 1.346 \, \unit{\centi\meter} \\
