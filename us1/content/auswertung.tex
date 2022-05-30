@@ -1,28 +1,28 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Zunächst wurden die Zylinder ausgemessen. Insgesamt gab es vier verschiedene Zylinder, die gegebenenfalls auch gestapelt wurden.
-Die folgenden Größen wurden für die Acrylobjekte mit einer Schieblehre ermittelt:
+Zunächst wurden die Zylinder ausgemessen. Insgesamt gibt es vier verschiedene Zylinder, die gegebenenfalls auch gestapelt werden.
+Die folgenden Größen werden für die Acrylobjekte mit einer Schieblehre ermittelt:
 \begin{align*}
   z_1 &= 0.0404 \unit\meter & z_2 &= 0.0615 \unit\meter \\
   z_3 &= 0.0805 \unit\meter & z_4 &= 0.1205 \unit\meter \\
-  d_\text{Platte} &= 0.006 \unit\meter
+  \text{d}_\text{Platte} &= 0.006 \unit\meter
 \end{align*}
 
-\subsection{Schallgeschwindigkeit und Wellenlänge mittels des Impuls-Echo-Verfahren}
+\subsection{Bestimmung der Schallgeschwindigkeit und der Wellenlänge mit dem Impuls-Echo-Verfahren}
 
-Die Schallgeschwindigkeit wird über die Formel \autoref{eq:s} ermittelt.
+Die Schallgeschwindigkeit wird über die \autoref{eq:s} ermittelt.
 Dafür wird diese folgendermaßen umgestellt:
 \begin{equation}\label{eq:c_schall}
-  c_\text{Acryl} = \frac{2}{t} \cdot d_\text{Platte}
+  c_\text{Acryl} = \frac{2}{t} \cdot \text{d}_\text{Platte}
 \end{equation}
 Abgelesen werden die Intervalle aus \autoref{fig:messung1}, woraus sich der Mittelwert
 \begin{equation}
-  \increment t = 4.4 \pm 0.4
+  \increment t = \qty{4.4(4)}{\second}
 \end{equation}
 und daraus wiederum
 \begin{equation}
-  c_\text{Acryl} = (2740 \pm 270) \unit{\meter / \second}
+  c_\text{Acryl} = (2740 \pm 270) \unit{\meter\per\second}
 \end{equation}
 bildet. 
 
@@ -40,7 +40,7 @@ Daraus ergibt sich dann
 \begin{equation*}
   \increment T = \frac{2.3 \, \unit{\micro\second}}{5} = 0.46 \, \unit{\micro\second},
 \end{equation*}
-woraus sich direkt
+woraus sich
 \begin{align*}
   f = \frac{1}{T} = 2.174 \, \unit{\mega\hertz} && \text{und} && \lambda = \frac{c}{f} = (1.26 \pm 0.12) \cdot 10^{-3} \, \unit\meter\\
 \end{align*}
@@ -56,7 +56,7 @@ Die Tiefenmessung des Programms ergibt dann eine Tiefe von $d = 0.6 \, \unit{\ce
 \end{figure}
 
 
-\subsection{Schallgeschwindigkeitsmessung mittels des Impuls-Echo-verfahrens}
+\subsection{Bestimmung der Schallgeschwindigkeit mit dem Impuls-Echo-Verfahren}
 
 Die Messungen sind in \autoref{fig:echo_messungen} zu finden.
 Die daraus entnommenen Messdaten sind in \autoref{tab:echo_messungen} zu finden.
@@ -70,9 +70,8 @@ Um die Schallgeschwindigkeit zu bestimmen, wird der Ansatz
 gemacht. Die lineare Regression ist in \autoref{fig:plot1} zu finden.
 Der Ansatz ergibt die Werte
 \begin{align*}
-  c &= (2740 \pm 10)  \, \unit{\meter / \second}\\
-  &\text{und}\\
-  b &= (-2.4 \pm 0.8) \cdot 10^{-3} \, \unit{\meter / \second} \, .
+  c = (2740 \pm 10)  \, \unit{\meter / \second} \quad \text{und} \quad
+  b = -(2.4 \pm 0.8) \cdot 10^{-3} \, \unit{\meter / \second} \, .
 \end{align*}
 
 \begin{figure}
@@ -157,32 +156,29 @@ Der Ansatz ergibt die Werte
 \end{figure}%
 
 
-\subsection{Schallgeschwindigkeitsmessung mittels des Durchschallungsverfahren}
+\subsection{Bestimmung der Schallgeschwindigkeit mit dem Durchschallungs-Verfahren}
+
 Da bei diesem Verfahren der Schall den jeweiligen Körper nur einmal durchläuft, ergibt sich als Ansatz für die Regression die Formel
 \begin{equation*}
   d = t \cdot c + b \, .
 \end{equation*}
-Die Messungen sind per Screenshot gespeichert worden und sind in \autoref{fig:durchschallung_messungen} abgebildet.
+Die Messungen werden in Screenshots gespeichert und sind in \autoref{fig:durchschallung_messungen} abgebildet.
 Die Messwerte sind in \autoref{tab:durchschallung_messung} aufgetragen und die Regressionsgerade ist in \autoref{fig:plot2} abgebildet.
 Aus dem Ansatz ergeben sich dann die Werte
 \begin{align*}
-  c &= (2760 \pm 36)  \, \unit{\meter / \second}\\
-  &\text{und}\\
-  b &= (-4.21 \pm 1.11) \cdot 10^{-3} \, \unit{\meter / \second} \, .
+  c = (2760 \pm 36)  \, \unit{\meter / \second} \quad \text{und} \quad b = -(4.21 \pm 1.11) \cdot 10^{-3} \, \unit{\meter / \second} \, .
 \end{align*}
-
-
 
 \begin{figure}
   \centering
   \includegraphics[width = 0.7\linewidth]{build/plot2.pdf}
-  \caption{Regressionsgerade der Messdaten des Durchschallungsverfahrens.}
+  \caption{Regressionsgerade der Messdaten des Durchschallungs-Verfahrens.}
   \label{fig:plot2}
 \end{figure}
 
 \begin{table}
   \centering
-  \caption{Messdaten des Durchschallungsverfahrens.}
+  \caption{Messdaten des Durchschallungs-Verfahrens.}
   \label{tab:durchschallung_messung}
   \begin{tabular}{c | c c}
       \toprule
@@ -196,7 +192,7 @@ Aus dem Ansatz ergeben sich dann die Werte
   \end{tabular}
 \end{table}
 
-\begin{figure}%
+\begin{figure}[H]
   \begin{subfigure}{0.48\textwidth}%
   \centering%
   \includegraphics[width=\linewidth]{pictures/Durchschallung/z1.pdf}%
@@ -230,7 +226,9 @@ Aus dem Ansatz ergeben sich dann die Werte
   \label{fig:durchschallung_messungen}%
 \end{figure}%
 
-\subsection{Dämpfung mit dem Impuls-Echo-Verfahren}
+
+\subsection{Bestimmung der Dämpfung mit dem Impuls-Echo-Verfahren}
+
 Als nächstes soll aus den Amplituden der Messung die Dämpfungskonstante $\alpha$ aus \autoref{eq:Intensität} bestimmt werden.
 Dafür wird in der Gleichung $x = 2 \cdot d$ gewählt und für die lineare Regression wird die Gleichung logarithmiert.
 Es ergibt sich der Ansatz
@@ -251,7 +249,7 @@ Die Regressionsgerade ist in \autoref{fig:plot3} dargestellt.
   \label{fig:plot3}
 \end{figure}
 
-\subsection{Untersuchung des Augenmodells}
+\subsection{Vermessung des Augenmodells}
 
 Die entsprechende Messung zu der Vermessung des Augenmodells ist in \autoref{fig:auge} dargestellt
 und es sind fünf Peaks zu erkennen. Dabei ist der erste Peak (Peak 0) zu vernachlässigen.
