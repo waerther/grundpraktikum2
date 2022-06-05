@@ -1,6 +1,10 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+Zunächst wird die grundlegende Theorie für den folgenden Versuch aufgearbeitet.
+Dafür wird die Suszeptibilität erklärt und wie diese errechnet werden kann.
+Weiterhin wird theoretisch erklärt, wie diese Suszeptibilität experimentell ermittelt werden kann.
+
 \subsection{Berechnung der Suszeptibilität paramagnetischer Substanzen}
 
 Die magnetische Flussdichte $\vec{B}$ wird im Vakuum durch die Gleichung
@@ -15,9 +19,9 @@ Es folgt
 \end{equation}
 Diese Magnetisierung wird durch magnetische Momente in der Probe hervorgerufen.
 Die Magnetisierung ist durch
-\begin{equation}
+\begin{equation*}
     \vec{M} = \mu_0 \chi \vec{H}
-\end{equation}
+\end{equation*}
 gegeben.
 Dabei ist der Faktor $\chi$ die sogenannte Suszeptibilität, die sowohl von der Temperatur $T$ und $\vec{H}$ abhängig ist.
 Um die Eigenschaften des Paramagnetismus, die in diesem Experiment von Interesse sind, beobachten zu können, muss die Probe ein nicht
@@ -34,15 +38,15 @@ Der Gesamtdrehimpuls $\vec{J}$ setzt sich aus drei Anteilen zusammen, welche auc
 Einmal der Bahndrehimpuls der Elektronenhülle, dem Eigendrehimpuls der Elektronen, auch Spin genannt, und der Kerndrehimpuls.
 Letzterer kann hier vernachlässigt werden.
 Es folgt also
-\begin{equation}
+\begin{equation*}
     \vec{J} = \vec{L} + \vec{S},
-\end{equation}
+\end{equation*}
 wobei $\vec{L}$ und $\vec{S}$ jeweils die Vektorsummen der Einzeldrehimpulse der Elektronen in der Hülle sind.
 Quantenmechanisch lässt sich jetzt zeigen, dass
-\begin{align}
+\begin{align*}
     \vec{\mu_L} &= - \frac{\mu_B}{\hbar} \vec{L} \quad \text{und} \\
     \vec{\mu_S} &= - \text{g}_S \frac{\mu_B}{\hbar} \vec{S}
-\end{align}
+\end{align*}
 ist, wobei $\text{g}_S$ dem gyromagnetische Verhältnis des freien Elektrons und 
 \begin{align*}
     \mu_B = \frac{\text{e}_0}{\text{m}_0} \, \hbar
@@ -53,14 +57,14 @@ Mit
     \left| \vec{J}\right| = \sqrt{J \left( J + 1 \right)} \cdot \hbar
 \end{equation*}
 folgt 
-\begin{align}
+\begin{align*}
     \left|\vec{\mu_L} \right| &= \mu_B \sqrt{L \left( L + 1 \right)} \quad \text{und} \\
     \left|\vec{\mu_S} \right| &= \text{g}_S \mu_B \sqrt{S \left( S + 1 \right)}.
-\end{align}
-Durch einige geometrischen Beziehungen, die sich aus \autoref{fig:Zeichnung1} entnehmen lassen und der Näherung von $\text{g}_S \approx 2$ folgt dann schließlich, dass
-\begin{equation}
+\end{align*}
+Durch einige geometrischen Beziehungen, die sich aus \autoref{fig:Zeichnung1} entnehmen lassen und der Näherung von $\text{g}_S \approx 2$, folgt dann schließlich, dass
+\begin{equation*}
     \left|\vec{\mu}_{\mathrm{J}}\right| \approx \mu_{\mathrm{B}} \sqrt{\mathrm{J}(\mathrm{J}+1)} \frac{3 \mathrm{~J}(\mathrm{~J}+1)+\{\mathrm{S}(\mathrm{S}+1)-\mathrm{L}(\mathrm{L}+1)\}}{2 \mathrm{~J}(\mathrm{~J}+1)} .
-\end{equation}
+\end{equation*}
 Dabei wird der Term
 \begin{equation}
     g_{J}:=\frac{3 \mathrm{~J}(\mathrm{~J}+1)+\{\mathrm{S}(\mathrm{S}+1)-\mathrm{L}(\mathrm{L}+1)\}}{2 \mathrm{~J}(\mathrm{~J}+1)}
@@ -70,9 +74,9 @@ der Landé-Faktor des betreffenden Atoms genannt. Damit gilt
     \left|\vec{\mu}_{\mathrm{J}}\right| \approx \mu_{\mathrm{B}} \mathrm{g}_{\mathrm{J}} \sqrt{\mathrm{J}(\mathrm{J}+1)}.
 \end{equation}
 Durch das quantenmechanische Phänomen der Richtungsquantelung gilt
-\begin{equation}
+\begin{equation*}
     \mu_{J_z} = - \mu_B \text{g}_J m,
-\end{equation}
+\end{equation*}
 wobei $m$ die Orientierungszahl ist.
 Es lässt sich nun durch längere Rechnung zeigen, dass
 \begin{equation}
@@ -109,9 +113,9 @@ Diese Regeln basieren darauf, dass die Hüllenelektronen sich untereinander elek
 \end{wrapfigure}
 Um die Suszeptibilität $\chi$ experimentell zu bestimmen, wird eine Brückenschaltung wie in \autoref{fig:Zeichnung2} verwendet.
 Die Induktivität einer Spule ist durch
-\begin{equation}
+\begin{equation*}
     L_\text{ges} = \mu \mu_0 \frac{n^2}{I} F
-\end{equation}
+\end{equation*}
 gegeben, welche sich aber aufgrund der technischen Realisierbarkeit zu
 \begin{equation}
     L_\text{ges} ' = \mu_0 \frac{n^2}{I} F + \chi \mu_0 \mu_0 \frac{n^2}{I} Q
@@ -122,5 +126,5 @@ Nach langer Rechnung lässt sich für den hohe Frequenzen zeigen, dass
 \begin{equation}
     \omega \rightarrow \inf: \chi = 2 \cdot \frac{\increment R}{R_3} \frac{F}{Q}
 \end{equation}
-gilt.
+gilt \cite{v606}.
 $R_3$ ist dabei der Widerstand am Potentiometer in \autoref{fig:Zeichnung2} und $\increment$ die Differenz am Potentiometer.
