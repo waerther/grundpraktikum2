@@ -70,7 +70,7 @@ Dabei wird der Term
     g_{J}:=\frac{3 \mathrm{~J}(\mathrm{~J}+1)+\{\mathrm{S}(\mathrm{S}+1)-\mathrm{L}(\mathrm{L}+1)\}}{2 \mathrm{~J}(\mathrm{~J}+1)}
 \end{equation}
 der Landé-Faktor des betreffenden Atoms genannt. Damit gilt
-\begin{equation}
+\begin{equation}\label{eq:lande}
     \left|\vec{\mu}_{\mathrm{J}}\right| \approx \mu_{\mathrm{B}} \mathrm{g}_{\mathrm{J}} \sqrt{\mathrm{J}(\mathrm{J}+1)}.
 \end{equation}
 Durch das quantenmechanische Phänomen der Richtungsquantelung gilt
@@ -123,13 +123,13 @@ gegeben, welche sich aber aufgrund der technischen Realisierbarkeit zu
 abändert. Dabei ist $Q$ der Querschnitt der Probe und $F$ der Spulenquerschnitt.
 Es werden zwei Spulen möglichst gleicher Induktivität $L$ benutzt, da die Induktionsdifferenz $\increment L$ für die Suszeptibilitätsmessung entscheidend ist.
 Es lässt sich für hohe Frequenzen zeigen, dass
-\begin{equation}
-    \omega \rightarrow \inf: \chi = \frac{4 \cdot F U_\text{Br}}{Q \cdot U_\text{Sp}}
+\begin{equation}\label{eq:delU}
+    \omega \rightarrow \inf: \chi = 4 \cdot \frac{F}{Q} \frac{U_\text{Br}}{U_\text{Sp}}
 \end{equation}
 mit $U_\text{Br}$ als Brückenspannung und $U_\text{Sp}$ als Speisespannung \cite{v606}.
 Nach langer Rechnung lässt sich außerdem für hohe Frequenzen zeigen
-\begin{equation}
-    \omega \rightarrow \inf: \chi = 2 \cdot \frac{\increment R}{R_3} \frac{F}{Q}
+\begin{equation}\label{eq:delR}
+    \omega \rightarrow \inf: \chi = 2 \cdot  \frac{F}{Q}\frac{\increment R}{R_3}
 \end{equation}
 gilt \cite{v606}.
 $R_3$ ist dabei der Widerstand am Potentiometer in \autoref{fig:Zeichnung2} und $\increment$ die Differenz am Potentiometer.
