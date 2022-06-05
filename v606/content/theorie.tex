@@ -105,12 +105,12 @@ Diese Regeln basieren darauf, dass die Hüllenelektronen sich untereinander elek
 
 
 \subsection{Vorgehen zur Bestimmung der Suszeptibilität}
-\begin{wrapfigure}{r}{0.4\linewidth}
+\begin{figure}
     \center
-    \includegraphics[width=\linewidth]{pictures/Zeichnung2.pdf}
+    \includegraphics[width=0.5\linewidth]{pictures/Zeichnung2.pdf}
     \caption{Suszeptibilitätsmessung mittels einer Brückenschaltung \cite{v606}.}
     \label{fig:Zeichnung2}
-\end{wrapfigure}
+\end{figure}
 Um die Suszeptibilität $\chi$ experimentell zu bestimmen, wird eine Brückenschaltung wie in \autoref{fig:Zeichnung2} verwendet.
 Die Induktivität einer Spule ist durch
 \begin{equation*}
@@ -122,7 +122,12 @@ gegeben, welche sich aber aufgrund der technischen Realisierbarkeit zu
 \end{equation}
 abändert. Dabei ist $Q$ der Querschnitt der Probe und $F$ der Spulenquerschnitt.
 Es werden zwei Spulen möglichst gleicher Induktivität $L$ benutzt, da die Induktionsdifferenz $\increment L$ für die Suszeptibilitätsmessung entscheidend ist.
-Nach langer Rechnung lässt sich für den hohe Frequenzen zeigen, dass
+Es lässt sich für hohe Frequenzen zeigen, dass
+\begin{equation}
+    \omega \rightarrow \inf: \chi = \frac{4 \cdot F U_\text{Br}}{Q \cdot U_\text{Sp}}
+\end{equation}
+mit $U_\text{Br}$ als Brückenspannung und $U_\text{Sp}$ als Speisespannung \cite{v606}.
+Nach langer Rechnung lässt sich außerdem für hohe Frequenzen zeigen
 \begin{equation}
     \omega \rightarrow \inf: \chi = 2 \cdot \frac{\increment R}{R_3} \frac{F}{Q}
 \end{equation}
