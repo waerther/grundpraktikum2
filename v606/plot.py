@@ -38,10 +38,6 @@ fa, fnu0, fb = pcov
 ua = ufloat(a, fa) 
 ub = ufloat(b, fb)
 unu0 = ufloat(nu0, fnu0)
-print('a =', ua)
-print('b =', ub)
-print('nu0 =', nu0)
-print('U0 =', g(nu0, a, nu0, b))
 
 xx = np.linspace(18, 42, 10**4)
 plt.plot(xx, g(xx, *para), '-b', linewidth = 1, label = 'Ausgleichsfunktion', alpha=0.5)
