@@ -22,7 +22,7 @@ Damit folgt für die drei Stoffe:
   \item $\ce{Gd2O3}$ besitzt sieben Elektronen in der 4f-Schale mit dem selben Spin folgt für $S = \frac{7}{2}$ und für $L = 0$, da $m$ gleich der Anzahl an Elektronen ist.
         Damit ist $J = S = 3.5$ und $g_\text{j} = 2$
 
-  \item $\ce{Gd2O3}$ besitzt drei Elektronen in der 4f-Schale, also ist $S = \frac{3}{2}$ und $L = 6$.
+  \item $\ce{Nd2O3}$ besitzt drei Elektronen in der 4f-Schale, also ist $S = \frac{3}{2}$ und $L = 6$.
         Aufgrund der weniger als halbvollen Schale folgt für $J = L - S = 6 + \frac{3}{2} = 4,5$ und für $g_\text{j} = \frac{8}{11}$
 \end{itemize}
 
@@ -69,7 +69,7 @@ Daraus kann nach \autoref{eq:susz_theo} die theoretische Suszeptibilität der St
 \end{table}
 
 
-\subsection{Bestimmung der Filterfrequenz}
+\subsection{Bestimmung der Filterfrequenz und Güte des Selektivverstärkers}
 
 Unter Verwendung eines Selektiv-Verstärkers mit einer Güte von $\text{Q} = 20$
 und einer konstanten Sinus-Speisespannung von $U_\text{Sp} = \qty{35}{kHz}$ 
@@ -120,11 +120,20 @@ Aus \autoref{eq:gauss} ergeben sich die Parameter
 \end{align*}
 und die zu bestimmenden Werte
 \begin{align*}
-  \nu_\text{0} = \qty{34.95}{kHz} \approx \qty{35}{kHz} &\quad 
+  \nu_\text{0} = \qty{34.95(14)}{kHz} \approx \qty{35}{kHz} &\quad 
   \text{mit} \quad U_\text{A} = \qty{1.97}{\volt} \approx \qty{2}{\volt} \, .
 \end{align*}
 
-
+Zur Bestimmung der Güte werden zusätzlich noch diejenigen Frequenzen $\nu_{-}$ und $\nu_{+}$ in \autoref{fig:plot1} erfasst,
+bei denen das Verhältnis von Aus- und Eingangsspannung $\text{U}_{A} / \text{U}_{E}$ auf $1/\sqrt{2}$ absingt.
+Diese ergeben sich zu
+\begin{align*}
+  \nu_{-} = \qty{33.52(14)}{kHz} \quad \text{und} \quad \qty{36.38(14)}{kHz} \, .
+\end{align*}
+Die experimentell ermittelte Güte des Selektivverstärkers ist somit
+\begin{equation}
+  Q = \frac{\nu_0}{\nu_{+} - \nu_{-}} = \num{12(8)} \, .
+\end{equation}
 
 
 \subsection{Experimentelle Bestimmung der Suszeptibilität}
