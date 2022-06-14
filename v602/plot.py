@@ -1,21 +1,22 @@
-import matplotlib.pyplot as plt
-import numpy as np
+# import matplotlib.pyplot as plt
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+# import numpy as np
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
-plt.legend(loc='best')
+# x = np.linspace(0, 10, 1000)
+# y = x ** np.sin(x)
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
-plt.legend(loc='best')
+# plt.subplot(1, 2, 1)
+# plt.plot(x, y, label='Kurve')
+# plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+# plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
+# plt.legend(loc='best')
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.savefig('build/plot.pdf', bbox_inches = "tight")
-plt.clf() 
+# plt.subplot(1, 2, 2)
+# plt.plot(x, y, label='Kurve')
+# plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+# plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
+# plt.legend(loc='best')
+
+# # in matplotlibrc leider (noch) nicht möglich
+# # plt.savefig('build/plot.pdf', bbox_inches = "tight")
+# # plt.clf() 
