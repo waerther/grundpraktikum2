@@ -1,3 +1,17 @@
+make all:
+	make -C us1
+	make -C us2
+	make -C us3
+	make -C v401
+	make -C v407
+	make -C v500
+	make -C v504
+	make -C v601
+	make -C v602
+	make -C v606
+	make -C v703
+	make -C v704
+
 vXXX:
 	make -C vXXX
 
