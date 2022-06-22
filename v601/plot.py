@@ -15,11 +15,12 @@ for i, U_i in enumerate(U):
 
 m = -(delta_I / delta_U)
 
-plt.plot(U[1:], m[1:], 'x', c = 'r')
+plt.plot(U[1:], m[1:], 'x', c = 'r', label=r'$m  =\frac{y_{i+1} - y_{i}}{U_{i+1} - U_{i}}$')
 plt.plot(U[1:], m[1:], '--', c = 'b')
 plt.xlabel(r'$U \, / \,V$')
 plt.ylabel(r'$- m$')
 plt.grid()
+plt.legend(loc='best')
 plt.savefig('build/plot1.pdf', bbox_inches = "tight")
 plt.clf() 
 
@@ -36,10 +37,11 @@ for i, U_i in enumerate(U):
 
 m = -(delta_I / delta_U)
 
-plt.plot(U[1:], m[1:], 'x', c = 'r')
+plt.plot(U[1:], m[1:], 'x', c = 'r', label=r'$m  =\frac{y_{i+1} - y_{i}}{U_{i+1} - U_{i}}$')
 plt.plot(U[1:], m[1:], '--', c = 'b')
 plt.xlabel(r'$U \, / \,V$')
 plt.ylabel(r'$- m$')
 plt.grid()
+plt.legend(loc='best')
 plt.savefig('build/plot2.pdf', bbox_inches = "tight")
 plt.clf() 

@@ -23,15 +23,13 @@ und
   E_{\mathrm{K}, \beta}^{\mathrm{lit}} =8,906 \mathrm{keV} \, .
 \end{equation*}
 angenommen \cite{x_ray_database}.
-Daraus resultieren dann auch durch \autoref{tbd}, \autoref{tbd} und \autoref{tbd} die $\sigma_i$'s
+Daraus resultieren dann auch durch \autoref{eq:sigma} die $\sigma_i$'s
 \begin{align*}
   \sigma_{1} &=3,29 \, ,\\
   \sigma_{2} &=12,38 \\ 
   \intertext{und}
   \sigma_{3} &=21,68 \, .
 \end{align*}
-
-%  Anhang ?
  
 \begin{table}
   \centering
@@ -54,32 +52,28 @@ Daraus resultieren dann auch durch \autoref{tbd}, \autoref{tbd} und \autoref{tbd
 Zunächst soll die Bragg-Bedingung nachgewiesen werden.
 Die Messwerte sind in \autoref{fig:bragg} aufgetragen.
 Der Sollwinkel liegt bei $28°$.
-Mittels Python wurde das Maximum bei tbd gefunden. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Mittels Python wurde das Maximum bei $28°$ gefunden.
 
-% \begin{figure}
-%   \centering
-%   \caption{Messwerte zur Untersuchung der Bragg-Bedingung}
-%   \label{fig:bragg}
-%   \includegraphics[width=0.5 \linewidth]{build/bragg.pdf}
-% \end{figure}
+\begin{figure}
+  \centering
+  \caption{Messwerte zur Untersuchung der Bragg-Bedingung}
+  \label{fig:bragg}
+  \includegraphics[width=0.5 \linewidth]{build/bragg.pdf}
+\end{figure}
 
 \subsection{Emissionsspektrum von Kupfer}
 Im folgenden wird das Emissionsspektrum von Kupfer untersucht.
 Aufgetragen sind die Messdaten, die über einen USB-Stick beim Versuch gespeichert und ausgelesen wurden, in \autoref{fig:kupfer1}.
-Das Maximum der Bremsstrahlung lässt sich ungefähr bei $tbd °$ einordnen.
+Das Maximum der Bremsstrahlung wurde ebenfalls per Python bei $\qty{11.8}{°}$ ermittelt.  
 Um die charakteristische Strahlung genauer zu untersuchen werden nur Messwerte zwischen tbd und tbd in \autoref{fig:kupfer2} abgebildet.
 Aus den Peaks lassen sich dann die Energien mit \autoref{eq:tbd} zu
 \begin{align*}
-  E_{\text{K}_\alpha} = tbd \\ % \qty{tbd}{keV}\\
-  \intertext{und} \\
-  E_{\text{K}_\beta} = tbd % \qty{tbd}{keV}
+  E_{\text{K}_\alpha} = \qty{8.077}{keV} &&\text{und}&& E_{\text{K}_\beta} = \qty{8.914}{keV}
 \end{align*}
 berechnet.
 Die Halbwertsbreiten liefern die Energiedifferenzen
 \begin{align*}
-  \increment E_{\text{K}_\alpha} &= tbd \\ % \qty{tbd}{keV}\\
-  \intertext{und}
-  \increment E_{\text{K}_\beta} &= tbd % \qty{tbd}{keV} \, .
+  \increment E_{\text{K}_\alpha} = \qty{154.5}{keV} &&\text{und}&& \increment E_{\text{K}_\beta} = \qty{195.8}{keV} \, .
 \end{align*}
 Für das Auflösungsvermögen gilt die Gleichung
 \begin{equation*}
@@ -87,34 +81,32 @@ Für das Auflösungsvermögen gilt die Gleichung
 \end{equation*}
 woraus die Werte
 \begin{align*}
-  A_{\text{K}_\alpha} = tbd\\
-  \intertext{und} \\
-  A_{\text{K}_\beta} = tbd
+  A_{\text{K}_\alpha} = 41,24 && \text{und} && A_{\text{K}_\beta} = 57,69
 \end{align*}
 bestimmt werden.
 Schließlich werden noch die Abschirmkonstanten mit \autoref{tbd}, \autoref{tbd} und \autoref{tbd} bestimmt.
-Hier wird für das errechnen von $\sigma_2$ und $\sigma_3$ der theoretische Wert von $\sigma_1$ herangezogen, da sonst keine Bestimmung der anderen Möglich wäre. 
+Hier wird für das Errechnen von $\sigma_2$ und $\sigma_3$ der theoretische Wert von $\sigma_1$ herangezogen, da sonst keine Bestimmung der anderen Möglich wäre. 
 Es folgt
 \begin{align*}
   \sigma_{1} &= 3,29 \, ,\\
-  \sigma_{2} &= tbd \\ 
+  \sigma_{2} &= 12,62 \\ 
   \intertext{und}
-  \sigma_{3} &= tbd \, .
+  \sigma_{3} &= 21.93 \, .
 \end{align*}
 
-% \begin{figure}
-%   \centering
-%   \caption{Messreihe zur Untersuchung des Emissionsspektrums von Kupfer.}
-%   \label{fig:kupfer1}
-%   \includegraphics[width=0.5 \linewidth]{build/kupfer1.pdf}
-% \end{figure}
+\begin{figure}
+  \centering
+  \caption{Messreihe zur Untersuchung des Emissionsspektrums von Kupfer.}
+  \label{fig:kupfer1}
+  \includegraphics[width=0.5 \linewidth]{build/kupfer1.pdf}
+\end{figure}
 
-% \begin{figure}
-%   \centering
-%   \caption{Reduzierte Messreihe zur Untersuchung des Emissionsspektrums von Kupfer.}
-%   \label{fig:kupfer1}
-%   \includegraphics[width=0.5 \linewidth]{build/kupfer2.pdf}
-% \end{figure}
+\begin{figure}
+  \centering
+  \caption{ Messreihe zur genaueren Untersuchung des Emissionsspektrums von Kupfer.}
+  \label{fig:kupfer2}
+  \includegraphics[width=0.5 \linewidth]{build/kupfer2.pdf}
+\end{figure}
 
 \subsection{Analyse der Absorptionsspektren}
 
