@@ -3,7 +3,7 @@
 
 
 Im folgenden werden die Theoriewerte aus \autoref{tab:literatur}, die der Literatur entnommen wurden, verwendet \cite{x_ray_database}.
-Die zugehörigen Winkel jeweiliger Materialien wurden dann nach \autoref{eq:tbd} berechnet.
+Die zugehörigen Winkel jeweiliger Materialien wurden dann nach \autoref{eq:Winkel} berechnet.
 Es folgt 
 \begin{equation*}
   \theta = \arcsin \left( \frac{h c}{2 d E} \right)
@@ -65,7 +65,7 @@ Mittels Python wurde das Maximum bei $28°$ gefunden.
 Im folgenden wird das Emissionsspektrum von Kupfer untersucht.
 Aufgetragen sind die Messdaten, die über einen USB-Stick beim Versuch gespeichert und ausgelesen wurden, in \autoref{fig:kupfer1}.
 Das Maximum der Bremsstrahlung wurde ebenfalls per Python bei $\qty{11.8}{°}$ ermittelt.  
-Um die charakteristische Strahlung genauer zu untersuchen werden nur Messwerte zwischen tbd und tbd in \autoref{fig:kupfer2} abgebildet.
+Um die charakteristische Strahlung genauer zu untersuchen wird der Bereich der großen Peaks besser aufgelöst und in \autoref{fig:kupfer2} abgebildet.
 Aus den Peaks lassen sich dann die Energien mit \autoref{eq:tbd} zu
 \begin{align*}
   E_{\text{K}_\alpha} = \qty{8.077}{keV} &&\text{und}&& E_{\text{K}_\beta} = \qty{8.914}{keV}
@@ -84,7 +84,7 @@ woraus die Werte
   A_{\text{K}_\alpha} = 41,24 && \text{und} && A_{\text{K}_\beta} = 57,69
 \end{align*}
 bestimmt werden.
-Schließlich werden noch die Abschirmkonstanten mit \autoref{tbd}, \autoref{tbd} und \autoref{tbd} bestimmt.
+Schließlich werden noch die Abschirmkonstanten mit \autoref{eq:sigma} bestimmt.
 Hier wird für das Errechnen von $\sigma_2$ und $\sigma_3$ der theoretische Wert von $\sigma_1$ herangezogen, da sonst keine Bestimmung der anderen Möglich wäre. 
 Es folgt
 \begin{align*}
@@ -118,19 +118,24 @@ Die Mitte ist durch die Gleichung
 \begin{equation*}
   I_K = \frac{I_K^\text{min} + I_K^\text{max}}{2}
 \end{equation*}
-festgelegt. Dabei beschreiben $I_K^\text{min}$ und $I_K^\text{max}$ das Intensitätsminimum /- maximum der Absorptionskante.
-Daraus lässt sich dann der Winkel $\theta$ bestimmen, woraus Schließlich die Energie sowie die Abschirmkonstante bestimmt werden kann.
+festgelegt. Dabei beschreiben $I_K^\text{min}$ und $I_K^\text{max}$ das Intensitätsminimum/- maximum der Absorptionskante.
+Daraus lässt sich dann der Winkel $\theta$ bestimmen, woraus schließlich die Energie sowie die Abschirmkonstante bestimmt werden kann.
 
 \subsubsection{Zink}
-% \begin{figure}
-%   \centering
-%   \caption{Absorptionsspektrum von Zink.}
-%   \label{fig:zink}
-%   \includegraphics[width=0.5 \linewidth]{build/zink.pdf}
-% \end{figure}
+Abgebildet sind die Messdaten und die Approximation des gesuchten Winkels in \autoref{fig:zink}.
+Es ergibt sich $\theta = \qty{18.55}{°}$ und $E = \qty{9.7}{keV}$
+Dargestellt sind die Messdaten und die Absorptionskante in \autoref{fig:zink}.
+\begin{figure}[H]
+  \centering
+  \caption{Absorptionsspektrum von Zink.}
+  \label{fig:zink}
+  \includegraphics[width=0.5 \linewidth]{build/zink.pdf}
+\end{figure}
 
 \subsubsection{Gallium}
-% \begin{figure}
+% Dargestellt sind die Messdaten in \autoref{fig:gallium}.
+% Für Gallium ergibt sich eine Energie von $\qty{tbd}{\keV}$ für $\theta = \qty{tbd}{°}$.
+% \begin{figure}[H]
 %   \centering
 %   \caption{Absorbtionsspektrum von Gallium.}
 %   \label{fig:gallium}
@@ -138,15 +143,20 @@ Daraus lässt sich dann der Winkel $\theta$ bestimmen, woraus Schließlich die E
 % \end{figure}
 
 \subsubsection{Brom}
-% \begin{figure}
-%   \centering
-%   \caption{Absorbtionsspektrum von Brom.}
-%   \label{fig:brom}
-%   \includegraphics[width=0.5 \linewidth]{build/brom.pdf}
-% \end{figure}
+Dargestellt sind die Messdaten in \autoref{fig:brom}.
+Für Brom ergibt sich eine Energie von $\qty{13.529}{\keV}$ für $\theta = \qty{13.15}{°}$.
+
+\begin{figure} [H]
+  \centering
+  \caption{Absorbtionsspektrum von Brom.}
+  \label{fig:brom}
+  \includegraphics[width=0.5 \linewidth]{build/brom.pdf}
+\end{figure}
 
 \subsubsection{Rubidium}
-% \begin{figure}
+
+
+% \begin{figure}[H]
 %   \centering
 %   \caption{Absorbtionsspektrum von Rubidium.}
 %   \label{fig:rubidium}
@@ -154,20 +164,24 @@ Daraus lässt sich dann der Winkel $\theta$ bestimmen, woraus Schließlich die E
 % \end{figure}
 
 \subsubsection{Strontium}
-% \begin{figure}
-%   \centering
-%   \caption{Absorbtionsspektrum von Strontium.}
-%   \label{fig:strontium}
-%   \includegraphics[width=0.5 \linewidth]{build/strontium.pdf}
-% \end{figure}
+Für Strontium ergibt sich ein Winkel von $\qty{11.05}{°}$, woraus eine Energie von $E = \qty{16.059}{keV}$ folgt.
+Dargestellt ist die Messreihe in \ref{fig:strontium}
+\begin{figure}[H]
+  \centering
+  \caption{Absorbtionsspektrum von Strontium.}
+  \label{fig:strontium}
+  \includegraphics[width=0.5 \linewidth]{build/strontium.pdf}
+\end{figure}
 
 \subsubsection{Zirkonium}
-% \begin{figure}
-%   \centering
-%   \caption{Absorbtionsspektrum von Zirkonium.}
-%   \label{fig:zirkonium}
-%   \includegraphics[width=0.5 \linewidth]{build/zirkonium.pdf}
-% \end{figure}
+Bei Zirkonium ergab sich nach der Ausgleichsrechnung $\theta = \qty{9.95}{°}$ und $E = \qty{17.903}{keV}$.
+Die Messreihe und die Regression sind in \autoref{fig:zirkonium} dargestellt.
+\begin{figure}[H]
+  \centering
+  \caption{Absorbtionsspektrum von Zirkonium.}
+  \label{fig:zirkonium}
+  \includegraphics[width=0.5 \linewidth]{build/zirkonium.pdf}
+\end{figure}
 
 \subsection{Moseley's Gesetz}
 Nun wird mit den gewonnenen Energien das Moseley'sche Gesetz verifiziert werden.

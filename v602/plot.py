@@ -124,3 +124,358 @@ plt.legend(loc="best")
 plt.grid(linestyle="dashed")
 plt.savefig('build/kupfer2.pdf', bbox_inches = "tight")
 plt.clf()
+
+# Funktionen definieren
+
+def theta(E):
+    return 180 / np.pi * np.arcsin(const.h * const.c / (2 * 201.4e-12 * const.e * E))
+
+def sigma(E, Z):
+    return Z - np.sqrt((E / 13.6) - ((1 / 137) ** 2 * Z ** 4) / 4)
+
+def s1(E):
+    return 29 - np.sqrt(E / 13.6)
+
+def s2(E, s1):
+    return 29 - np.sqrt(4 * (29 - s1) ** 2 - 4 * E / 13.6)
+
+def s3(E, s1):
+    return 29 - np.sqrt(9 * (29 - s1) ** 2 - 9 * E / 13.6)
+
+def energ(the):
+    return const.h * const.c / (2 * 201.4e-12 * np.sin(np.pi / 180 * the) * const.e)
+
+# Plots erstellen für Brom
+
+data = pd.read_csv('tables/messdaten/Messung_Brom/Brom_2.txt', decimal=',', delimiter = "\t")
+data = data.to_numpy()
+x = data[:,0]
+y = data[:,1]
+
+rel_min = np.min(y)
+rel_max = np.max(y)
+theta_mitte_y = (rel_max - rel_min) / 2
+theta_mitte = (x[y==rel_max] - x[y==rel_min]) / 2
+
+x1 = np.diff(y)
+tolger = 3
+x3 = []
+x4 = []
+x8 = []
+n = 0
+for i in range(len(x1)):
+    if n == 0:
+        if abs(x1[i]) < tolger:
+            x3.append(i)
+        else:
+            x8.append(i)
+            n = 1
+    else:
+        if abs(x1[i]) < tolger:
+            x4.append(i)
+
+        else:
+            x8.append(i)
+            n = 1
+
+x5 = []
+for i in range(len(x3)):
+    x5.append(y[x3[i]])
+
+plt.axhline(np.mean(x5),c='darkgreen',  label='Plateau')
+x6 = []
+for i in range(len(x4)):
+    x6.append(y[x4[i]])
+
+plt.axhline(np.mean(x6), c='darkgreen')
+y2 = np.mean(x6) + (np.mean(x5) - np.mean(x6)) / 2
+regx = x[x8]
+regy = y[x8]
+regx = regx[1:-1]
+regy = regy[1:-1]
+
+def f(x, a, b):
+    return a * x + b
+
+params, covariance_matrix = curve_fit(f, regx, regy)
+
+# errors = np.sqrt(np.diag(covariance_matrix))
+energy = energ((x[y==rel_min] + theta_mitte)[0])
+print(energy)
+print((x[y==rel_min] + theta_mitte)[0])
+
+plt.plot(
+    regx,
+    f(regx, params[0], params[1]),
+    color="red",
+    ms=4,
+    marker="",
+    linestyle="-",
+    label="Regression",
+)
+
+plt.axvline(x[y==rel_min] + theta_mitte, c='k', label='Mittleres Theta')
+plt.axhline(rel_min + theta_mitte_y, c='grey')
+
+plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
+plt.xlabel(r"$\theta \, / \, °$")
+plt.ylabel(r"Impulse")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+plt.savefig('build/brom.pdf', bbox_inches = "tight")
+plt.clf()
+
+# Zink
+
+data = pd.read_csv('tables/messdaten/Messung_Zink/Zink_2.txt', decimal=',', delimiter = "\t")
+data = data.to_numpy()
+x = data[:,0]
+y = data[:,1]
+
+rel_min = np.min(y)
+rel_max = np.max(y)
+theta_mitte_y = (rel_max - rel_min) / 2
+theta_mitte = (x[y==rel_max] - x[y==rel_min]) / 2
+
+
+x1 = np.diff(y)
+# print(x1)
+tolger = 2
+x3 = []
+x4 = []
+x8 = []
+n = 0
+for i in range(len(x1)):
+    if n == 0:
+        if abs(x1[i]) < tolger:
+            x3.append(i)
+        else:
+            x8.append(i)
+            n = 1
+    else:
+        if abs(x1[i]) < tolger:
+            x4.append(i)
+
+        else:
+            x8.append(i)
+            n = 1
+
+x5 = []
+for i in range(len(x3)):
+    x5.append(y[x3[i]])
+
+plt.axhline(np.mean(x5),c='darkgreen',  label='Plateau')
+x6 = []
+for i in range(len(x4)):
+    x6.append(y[x4[i]])
+
+plt.axhline(np.mean(x6), c='darkgreen')
+y2 = np.mean(x6) + (np.mean(x5) - np.mean(x6)) / 2
+regx = x[x8]
+regy = y[x8]
+regx = regx[1:-1]
+regy = regy[1:-1]
+
+
+def f(x, a, b):
+    return a * x + b
+
+
+params, covariance_matrix = curve_fit(f, regx, regy)
+
+# errors = np.sqrt(np.diag(covariance_matrix))
+energy = energ((x[y==rel_min] + theta_mitte)[0])
+print(energy)
+print((x[y==rel_min] + theta_mitte)[1])
+
+
+plt.plot(
+    regx,
+    f(regx, params[0], params[1]),
+    color="red",
+    ms=4,
+    marker="",
+    linestyle="-",
+    label="Regression",
+)
+
+plt.axvline((x[y==rel_min])[1] + theta_mitte[1], c='k', label='Mittleres Theta')
+plt.axhline(rel_min + theta_mitte_y, c='grey')
+
+plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
+plt.xlabel(r"$\theta \, / \, °$")
+plt.ylabel(r"Impulse")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+plt.savefig('build/zink.pdf', bbox_inches = "tight")
+plt.clf()
+
+# Strontium
+
+data = pd.read_csv('tables/messdaten/Messung_Strontium/Strontium_2.txt', decimal=',', delimiter = "\t")
+data = data.to_numpy()
+x = data[:,0]
+y = data[:,1]
+
+rel_min = np.min(y)
+rel_max = np.max(y)
+theta_mitte_y = (rel_max - rel_min) / 2
+theta_mitte = (x[y==rel_max] - x[y==rel_min]) / 2
+
+
+x1 = np.diff(y)
+# print(x1)
+tolger = 1
+x3 = []
+x4 = []
+x8 = []
+n = 0
+for i in range(len(x1)):
+    if n == 0:
+        if abs(x1[i]) < tolger:
+            x3.append(i)
+        else:
+            x8.append(i)
+            n = 1
+    else:
+        if abs(x1[i]) < tolger:
+            x4.append(i)
+
+        else:
+            x8.append(i)
+            n = 1
+
+x5 = []
+for i in range(len(x3)):
+    x5.append(y[x3[i]])
+
+plt.axhline(np.mean(y[-3]),c='darkgreen',  label='Plateau')
+x6 = []
+for i in range(len(x4)):
+    x6.append(y[x4[i]])
+
+plt.axhline(np.mean(y[:1]), c='darkgreen')
+y2 = np.mean(x6) + (np.mean(x5) - np.mean(x6)) / 2
+regx = x[x8]
+regy = y[x8]
+regx = regx[1:-1]
+regy = regy[1:-1]
+
+
+def f(x, a, b):
+    return a * x + b
+
+
+params, covariance_matrix = curve_fit(f, regx, regy)
+
+# errors = np.sqrt(np.diag(covariance_matrix))
+energy = energ((x[y==rel_min] + theta_mitte)[0])
+print(energy)
+print((x[y==rel_min] + theta_mitte))
+
+
+plt.plot(
+    regx,
+    f(regx, params[0], params[1]),
+    color="red",
+    ms=4,
+    marker="",
+    linestyle="-",
+    label="Regression",
+)
+
+plt.axvline((x[y==rel_min]) + theta_mitte, c='k', label='Mittleres Theta')
+plt.axhline(rel_min + theta_mitte_y, c='grey')
+
+plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
+plt.xlabel(r"$\theta \, / \, °$")
+plt.ylabel(r"Impulse")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+plt.savefig('build/strontium.pdf', bbox_inches = "tight")
+plt.clf()
+
+# Zirkonium
+
+data = pd.read_csv('tables/messdaten/Messung_zirkonium/zirkonium_2.txt', decimal=',', delimiter = "\t")
+data = data.to_numpy()
+x = data[:,0]
+y = data[:,1]
+
+rel_min = np.min(y)
+rel_max = np.max(y)
+theta_mitte_y = (rel_max - rel_min) / 2
+theta_mitte = (x[y==rel_max] - x[y==rel_min]) / 2
+
+
+x1 = np.diff(y)
+# print(x1)
+tolger = 2
+x3 = []
+x4 = []
+x8 = []
+n = 0
+for i in range(len(x1)):
+    if n == 0:
+        if abs(x1[i]) < tolger:
+            x3.append(i)
+        else:
+            x8.append(i)
+            n = 1
+    else:
+        if abs(x1[i]) < tolger:
+            x4.append(i)
+
+        else:
+            x8.append(i)
+            n = 1
+
+x5 = []
+for i in range(len(x3)):
+    x5.append(y[x3[i]])
+
+plt.axhline(np.mean(x5),c='darkgreen',  label='Plateau')
+x6 = []
+for i in range(len(x4)):
+    x6.append(y[x4[i]])
+
+plt.axhline(np.mean(y[-3]), c='darkgreen')
+y2 = np.mean(x6) + (np.mean(x5) - np.mean(x6)) / 2
+regx = x[x8]
+regy = y[x8]
+regx = regx[1:-1]
+regy = regy[1:-1]
+
+
+def f(x, a, b):
+    return a * x + b
+
+
+params, covariance_matrix = curve_fit(f, regx, regy)
+
+# errors = np.sqrt(np.diag(covariance_matrix))
+energy = energ((x[y==rel_min] + theta_mitte)[0])
+print(energy)
+print((x[y==rel_min] + theta_mitte)[1])
+
+
+plt.plot(
+    regx,
+    f(regx, params[0], params[1]),
+    color="red",
+    ms=4,
+    marker="",
+    linestyle="-",
+    label="Regression",
+)
+
+plt.axvline((x[y==rel_min])[1] + theta_mitte[1], c='k', label='Mittleres Theta')
+plt.axhline(rel_min + theta_mitte_y, c='grey')
+
+plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
+plt.xlabel(r"$\theta \, / \, °$")
+plt.ylabel(r"Impulse")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+plt.savefig('build/zirkonium.pdf', bbox_inches = "tight")
+plt.clf()
