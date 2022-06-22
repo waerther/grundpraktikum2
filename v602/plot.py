@@ -198,12 +198,6 @@ def f(x, a, b):
     return a * x + b
 
 params, covariance_matrix = curve_fit(f, regx, regy)
-
-# errors = np.sqrt(np.diag(covariance_matrix))
-energy = energ((x[y==rel_min] + theta_mitte)[0])
-print(energy)
-print((x[y==rel_min] + theta_mitte)[0])
-
 plt.plot(
     regx,
     f(regx, params[0], params[1]),
@@ -214,7 +208,8 @@ plt.plot(
     label="Regression",
 )
 
-plt.axvline(x[y==rel_min] + theta_mitte, c='k', label='Mittleres Theta')
+theta_x = (rel_min + theta_mitte_y - params[1]) / (params[0])
+plt.axvline(theta_x, c='k', label='Mittleres Theta')
 plt.axhline(rel_min + theta_mitte_y, c='grey')
 
 plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
@@ -282,13 +277,6 @@ def f(x, a, b):
 
 
 params, covariance_matrix = curve_fit(f, regx, regy)
-
-# errors = np.sqrt(np.diag(covariance_matrix))
-energy = energ((x[y==rel_min] + theta_mitte)[0])
-print(energy)
-print((x[y==rel_min] + theta_mitte)[1])
-
-
 plt.plot(
     regx,
     f(regx, params[0], params[1]),
@@ -298,8 +286,8 @@ plt.plot(
     linestyle="-",
     label="Regression",
 )
-
-plt.axvline((x[y==rel_min])[1] + theta_mitte[1], c='k', label='Mittleres Theta')
+theta_x = (rel_min + theta_mitte_y - params[1]) / (params[0])
+plt.axvline(theta_x, c='k', label='Mittleres Theta')
 plt.axhline(rel_min + theta_mitte_y, c='grey')
 
 plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
@@ -367,13 +355,6 @@ def f(x, a, b):
 
 
 params, covariance_matrix = curve_fit(f, regx, regy)
-
-# errors = np.sqrt(np.diag(covariance_matrix))
-energy = energ((x[y==rel_min] + theta_mitte)[0])
-print(energy)
-print((x[y==rel_min] + theta_mitte))
-
-
 plt.plot(
     regx,
     f(regx, params[0], params[1]),
@@ -384,7 +365,8 @@ plt.plot(
     label="Regression",
 )
 
-plt.axvline((x[y==rel_min]) + theta_mitte, c='k', label='Mittleres Theta')
+theta_x = (rel_min + theta_mitte_y - params[1]) / (params[0])
+plt.axvline(theta_x, c='k', label='Mittleres Theta')
 plt.axhline(rel_min + theta_mitte_y, c='grey')
 
 plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
@@ -452,13 +434,47 @@ def f(x, a, b):
 
 
 params, covariance_matrix = curve_fit(f, regx, regy)
+plt.plot(
+    regx,
+    f(regx, params[0], params[1]),
+    color="red",
+    ms=4,
+    marker="",
+    linestyle="-",
+    label="Regression",
+)
+theta_x = (rel_min + theta_mitte_y - params[1]) / (params[0])
+plt.axvline(theta_x, c='k', label='Mittleres Theta')
+plt.axhline(rel_min + theta_mitte_y, c='grey')
 
-# errors = np.sqrt(np.diag(covariance_matrix))
-energy = energ((x[y==rel_min] + theta_mitte)[0])
-print(energy)
-print((x[y==rel_min] + theta_mitte)[1])
+plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
+plt.xlabel(r"$\theta \, / \, °$")
+plt.ylabel(r"Impulse")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+plt.savefig('build/zirkonium.pdf', bbox_inches = "tight")
+plt.clf()
 
+# Gallium
+data = pd.read_csv('tables/messdaten/Messung_Gallium/Gallium_2.txt', decimal=',', delimiter = "\t")
+data = data.to_numpy()
+data = np.delete(data, 9, 0)
 
+x = data[:,0]
+y = data[:,1]
+
+rel_min = np.min(y)
+rel_max = np.max(y)
+theta_mitte_y = (rel_max - rel_min) / 2
+theta_mitte = (x[y==rel_max] - x[y==rel_min]) / 2
+
+def f(x, a, b):
+    return a * x + b
+
+regx= x[7:13]
+regy = y[7:13]
+
+params, covariance_matrix = curve_fit(f, regx, regy)
 plt.plot(
     regx,
     f(regx, params[0], params[1]),
@@ -469,13 +485,49 @@ plt.plot(
     label="Regression",
 )
 
-plt.axvline((x[y==rel_min])[1] + theta_mitte[1], c='k', label='Mittleres Theta')
+theta_x = (rel_min + theta_mitte_y - params[1]) / (params[0])
+plt.axvline(theta_x, c='k', label='Mittleres Theta')
 plt.axhline(rel_min + theta_mitte_y, c='grey')
 
+plt.axhline(np.mean(y[:7]),c='darkgreen',  label='Plateau')
+plt.axhline(np.mean(y[13:]),c='darkgreen')
 plt.plot(x, y, color="darkred", ms=6, marker=".", linestyle="", label="Messwerte")
 plt.xlabel(r"$\theta \, / \, °$")
 plt.ylabel(r"Impulse")
 plt.legend(loc="best")
 plt.grid(linestyle=":")
-plt.savefig('build/zirkonium.pdf', bbox_inches = "tight")
+
+plt.savefig('build/gallium.pdf', bbox_inches = "tight")
+plt.clf()
+
+# Moseleys Gesetz
+
+y = np.array([9.681, 10.393, 13.546, 16.139, 17.884]) * 10**3
+y = np.sqrt(y)
+x = np.array([30, 31, 35, 38, 40])
+
+# Fit a polynomial of degree 1, return covariance matrix
+params, covariance_matrix = np.polyfit(x, y, deg=1, cov=True)
+errors = np.sqrt(np.diag(covariance_matrix))
+
+# for name, value, error in zip('ab', params, errors):
+#     print(f'{name} = {value:.3f} ± {error:.3f}')
+
+x_plot = np.linspace(x[0], x[-1])
+plt.plot(
+    x_plot,
+    params[0] * x_plot + params[1],
+    label='Lineare Regression',
+    linewidth=1,
+)
+plt.legend(loc="best")
+plt.plot(x, y, 'x', c='darkred')
+plt.xlabel(r"$Z$")
+plt.ylabel(r"$\sqrt{E} \, / \, \sqrt{eV}$")
+plt.legend(loc="best")
+plt.grid(linestyle=":")
+
+# m = ufloat(3.55, 0.024)
+# print(m**2)
+plt.savefig('build/moseley.pdf', bbox_inches = "tight")
 plt.clf()

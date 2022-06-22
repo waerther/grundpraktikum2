@@ -1,2 +1,43 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Die Bragg-Bedingung konnte verifiziert werden.
+Aufgrund eines Softwareproblems konnte die Genauigkeit nicht auf $\increment \theta = 0.1 °$ gestellt werden, sondern nur auf $\increment \theta = 0.2 °$.
+Für den Bragg-Winkel ergab sich jedoch exakt der theoretisch zu erwartende Wert von $\theta = 28°$, weshalb hier davon ausgegangen werden kann, dass die Präzession genügend war.
+
+Bei der Messung des Emissionsspektrums von Kupfer ergab sich $ E_{\text{K}_\alpha} = \qty{8.077}{keV}$ und $E_{\text{K}_\beta} = \qty{8.914}{keV}$.
+Das bedeutet, es ergibt sich zu den Theoriewerten, die am Anfang von \autoref{sec:Auswertung} genannt wurden, eine Abweichung von
+\begin{align*}
+    \increment E_{\text{K}_\alpha} = \frac{8,077 - 8,048}{8,048} \cdot 100 = \qty{0.36}{\%} 
+    &&\text{und}&&
+    \increment E_{\text{K}_\beta} = \frac{8,914 - 8,906}{8,048} \cdot 100 = \qty{0.09}{\%} \, .
+\end{align*}
+
+Die Ergebnisse zur Messung der Absorptionsspektren sind in \autoref{tab:ergebnisse} dargestellt.
+Die Differenzen sind jeweils zu den Theoriewerten aus \autoref{tab:literatur} berechnet worden.
+\begin{table} [H]
+    \centering
+    \caption{Die Ergebnisse der zur Messung der Absorptionsspektren.}
+    \label{tab:ergebnisse}
+    \begin{tabular}{c c c c c c c}
+        \toprule
+        Material & $\theta$ & $\increment \theta$ in \% & $E$ & $\increment E$ in \%& $\sigma$ & $\increment \sigma$ in \%\\
+        \midrule
+        Zink       & 18,538 & 0,33 & 9,681  & 0,32 & 3,522 & 1,32 \\
+        Gallium    & 17,23  & 0,12 & 10,393 & 0,12 & 3,579 & 0,57 \\
+        Brom       & 13,13  & 0,53 & 13,546 & 0,48 & 3,758 & 2,12 \\
+        Strontium  & 10,99  & 0,18 & 16,139 & 0,11 & 3,957 & 0,57 \\
+        Zirkonium  & 9,91   & 0,61 & 17,884 & 0,64 & 4,210 & 2,94 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Schließlich wurde die Rydbergenergie zu $E_\text{Ryd} = \qty{12.6(0.17)}{\eV}$ bestimmt.
+Wird dieser Wert mit dem Literaturwert von $\qty{13.6}{\eV}$ verglichen, ergibt sich eine Abweichung von
+\begin{equation}
+    \increment E_{\text{K}_\alpha} = \frac{13,6 - 12,6}{12,6} \cdot 100 = \qty{7.94}{\%} \, .
+\end{equation}
+
+Insgesamt liegen die experimentell ermittelten Werte sehr nah an den Literaturwerten, wobei die Rydbergenergie die größte Abweichung hat.
+Die Fehler hätten durch eine längere Integrationszeit und kleinschrittigere $\increment \theta$'s durchaus kleiner ausfallen können.
+Außerdem sei angemerkt, dass vor allem Gallium im angenommenen Bereich des Plateaus große Schwankungen vorzuweisen hat.

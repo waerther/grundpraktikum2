@@ -36,28 +36,29 @@ Daraus resultieren dann auch durch \autoref{eq:sigma} die $\sigma_i$'s
   \caption{Theoriewerte für die Messwerte \cite{x_ray_database}.}
   \label{tab:literatur}
   \begin{tabular}{ccccc} 
-    \hline Element & $Z$ & $\sigma_{\mathrm{K, Lit}}$& $E_{\mathrm{K, Lit}}$ in keV & $\theta_{\mathrm{K, Lit}}$ in \\
-    \hline $\mathrm{Zn}$ & 30 & 3,57 & 9,65 & 18,60  \\
-    $\mathrm{Ga}$ & 31 & 3,60 & 10,38 & 17,25  \\
-    $\mathrm{Ge}$ & 32 & 3,66 & 11,11 & 16,08  \\
-    $\mathrm{Br}$ & 35 & 3,84 & 13,48 & 13,20  \\
-    $\mathrm{Rb}$ & 37 & 3,94 & 15,2 & 11,68   \\
-    $\mathrm{Sr}$ & 38 & 3,98 & 16,12 & 11,01  \\
-    $\mathrm{Zr}$ & 40 & 4,09 & 18,0 & 9,85    \\
+    \hline Element & $Z$ & $\sigma_{\mathrm{K, Lit}}$& $E_{\mathrm{K, Lit}}$ / keV & $\theta_{\mathrm{K, Lit}}$ / ° \\
+    \hline 
+    $\mathrm{Zn}$ & 30 & 3,57 & 9,65   & 18,60  \\
+    $\mathrm{Ga}$ & 31 & 3,60 & 10,38  & 17,25  \\
+    $\mathrm{Ge}$ & 32 & 3,66 & 11,11  & 16,08  \\
+    $\mathrm{Br}$ & 35 & 3,84 & 13,48  & 13,20  \\
+    $\mathrm{Rb}$ & 37 & 3,94 & 15,2   & 11,68   \\
+    $\mathrm{Sr}$ & 38 & 3,98 & 16,12  & 11,01  \\
+    $\mathrm{Zr}$ & 40 & 4,09 & 18,0   & 9,85    \\
     \hline
   \end{tabular}
 \end{table}
 
 \subsection{Überprüfung der Bragg - Bedingung}
 Zunächst soll die Bragg-Bedingung nachgewiesen werden.
-Die Messwerte sind in \autoref{fig:bragg} aufgetragen.
+Die Messwerte sind in \autoref{fig:bragg_2} aufgetragen.
 Der Sollwinkel liegt bei $28°$.
 Mittels Python wurde das Maximum bei $28°$ gefunden.
 
 \begin{figure}
   \centering
   \caption{Messwerte zur Untersuchung der Bragg-Bedingung}
-  \label{fig:bragg}
+  \label{fig:bragg_2}
   \includegraphics[width=0.5 \linewidth]{build/bragg.pdf}
 \end{figure}
 
@@ -66,11 +67,11 @@ Im folgenden wird das Emissionsspektrum von Kupfer untersucht.
 Aufgetragen sind die Messdaten, die über einen USB-Stick beim Versuch gespeichert und ausgelesen wurden, in \autoref{fig:kupfer1}.
 Das Maximum der Bremsstrahlung wurde ebenfalls per Python bei $\qty{11.8}{°}$ ermittelt.  
 Um die charakteristische Strahlung genauer zu untersuchen wird der Bereich der großen Peaks besser aufgelöst und in \autoref{fig:kupfer2} abgebildet.
-Aus den Peaks lassen sich dann die Energien mit \autoref{eq:tbd} zu
+Aus den Peaks lassen sich dann die Energien mit zu
 \begin{align*}
   E_{\text{K}_\alpha} = \qty{8.077}{keV} &&\text{und}&& E_{\text{K}_\beta} = \qty{8.914}{keV}
 \end{align*}
-berechnet.
+berechnen.
 Die Halbwertsbreiten liefern die Energiedifferenzen
 \begin{align*}
   \increment E_{\text{K}_\alpha} = \qty{154.5}{keV} &&\text{und}&& \increment E_{\text{K}_\beta} = \qty{195.8}{keV} \, .
@@ -120,10 +121,20 @@ Die Mitte ist durch die Gleichung
 \end{equation*}
 festgelegt. Dabei beschreiben $I_K^\text{min}$ und $I_K^\text{max}$ das Intensitätsminimum/- maximum der Absorptionskante.
 Daraus lässt sich dann der Winkel $\theta$ bestimmen, woraus schließlich die Energie sowie die Abschirmkonstante bestimmt werden kann.
-
+Mittels Python wird der Ansatz
+\begin{equation}
+  f(\theta) = \theta \cdot a + b
+\end{equation}
+gewählt.
+Daraus lässt sich dann $\theta$ durch
+\begin{equation}
+  \theta = \frac{I_K - b}{a}
+\end{equation}
+bestimmen.
 \subsubsection{Zink}
 Abgebildet sind die Messdaten und die Approximation des gesuchten Winkels in \autoref{fig:zink}.
-Es ergibt sich $\theta = \qty{18.55}{°}$ und $E = \qty{9.7}{keV}$
+Es ergibt sich $\theta = \qty{18.538}{°}$ und $E = \qty{9.681}{keV}$.
+$\sigma_K$ wird zu $\sigma_K = 3.53$ bestimmt.
 Dargestellt sind die Messdaten und die Absorptionskante in \autoref{fig:zink}.
 \begin{figure}[H]
   \centering
@@ -133,19 +144,20 @@ Dargestellt sind die Messdaten und die Absorptionskante in \autoref{fig:zink}.
 \end{figure}
 
 \subsubsection{Gallium}
-% Dargestellt sind die Messdaten in \autoref{fig:gallium}.
-% Für Gallium ergibt sich eine Energie von $\qty{tbd}{\keV}$ für $\theta = \qty{tbd}{°}$.
-% \begin{figure}[H]
-%   \centering
-%   \caption{Absorbtionsspektrum von Gallium.}
-%   \label{fig:gallium}
-%   \includegraphics[width=0.5 \linewidth]{build/gallium.pdf}
-% \end{figure}
+Dargestellt sind die Messdaten in \autoref{fig:gallium}.
+Für Gallium ergibt sich eine Energie von $E = \qty{10.393}{\keV}$ für $\theta = \qty{17.23}{°}$.
+$\sigma_K$ wird zu $\sigma_K = 3.56$ berechnet.
+\begin{figure}[H]
+  \centering
+  \caption{Absorbtionsspektrum von Gallium.}
+  \label{fig:gallium}
+  \includegraphics[width=0.5 \linewidth]{build/gallium.pdf}
+\end{figure}
 
 \subsubsection{Brom}
 Dargestellt sind die Messdaten in \autoref{fig:brom}.
-Für Brom ergibt sich eine Energie von $\qty{13.529}{\keV}$ für $\theta = \qty{13.15}{°}$.
-
+Für Brom ergibt sich eine Energie von $\qty{13.546}{\keV}$ für $\theta = \qty{13.13}{°}$.
+$\sigma_K$ berechnet sich zu $\sigma_K = 3.76$.
 \begin{figure} [H]
   \centering
   \caption{Absorbtionsspektrum von Brom.}
@@ -153,19 +165,11 @@ Für Brom ergibt sich eine Energie von $\qty{13.529}{\keV}$ für $\theta = \qty{
   \includegraphics[width=0.5 \linewidth]{build/brom.pdf}
 \end{figure}
 
-\subsubsection{Rubidium}
-
-
-% \begin{figure}[H]
-%   \centering
-%   \caption{Absorbtionsspektrum von Rubidium.}
-%   \label{fig:rubidium}
-%   \includegraphics[width=0.5 \linewidth]{build/rubidium.pdf}
-% \end{figure}
 
 \subsubsection{Strontium}
-Für Strontium ergibt sich ein Winkel von $\qty{11.05}{°}$, woraus eine Energie von $E = \qty{16.059}{keV}$ folgt.
-Dargestellt ist die Messreihe in \ref{fig:strontium}
+Für Strontium ergibt sich ein Winkel von $\qty{10.99}{°}$, woraus eine Energie von $E = \qty{16.139}{keV}$ folgt.
+Dargestellt ist die Messreihe in \autoref{fig:strontium}
+$\sigma_K$ wird zu $\sigma_K = 3.96$ bestimmt.
 \begin{figure}[H]
   \centering
   \caption{Absorbtionsspektrum von Strontium.}
@@ -174,8 +178,9 @@ Dargestellt ist die Messreihe in \ref{fig:strontium}
 \end{figure}
 
 \subsubsection{Zirkonium}
-Bei Zirkonium ergab sich nach der Ausgleichsrechnung $\theta = \qty{9.95}{°}$ und $E = \qty{17.903}{keV}$.
+Bei Zirkonium ergab sich nach der Ausgleichsrechnung $\theta = \qty{9.91}{°}$ und $E = \qty{17.884}{keV}$.
 Die Messreihe und die Regression sind in \autoref{fig:zirkonium} dargestellt.
+$\sigma_K$ wird zu $\sigma_K = 4.21$ berechnet.
 \begin{figure}[H]
   \centering
   \caption{Absorbtionsspektrum von Zirkonium.}
@@ -187,23 +192,23 @@ Die Messreihe und die Regression sind in \autoref{fig:zirkonium} dargestellt.
 Nun wird mit den gewonnenen Energien das Moseley'sche Gesetz verifiziert werden.
 Hierfür wird der Ansatz
 \begin{equation*}
-  f(Z) = m \cdot Z + b
+  f(Z) = a \cdot Z + b
 \end{equation*}
 gewählt. Dabei werden die Wurzeln der ermittelten Energien gegen die zugehörigen $Z$'s aufgetragen.
 Die Regression ist dargestellt in \autoref{fig:moseley}.
 Aus der linearen Regression mittels Python ergeben sich die Parameter
 \begin{align*}
-  m = \qty{1}{\eV}^{-\frac{1}{2}} && \text{und} && b  = \qty{1}{\eV}^{-\frac{1}{2}} \, .
+  a = \qty{3.55(0.024)}{\eV}^{-\frac{1}{2}} && \text{und} && b  = \qty{-8.035(0.825)}{\eV}^{-\frac{1}{2}} \, .
 \end{align*}
 Daraus lässt sich nun die experimentell ermittelte Rydberg-Energie zu
 \begin{equation*}
-  E_\text{Ryd} = \frac{1}{m^2} = tbd
+  E_\text{Ryd} = a^2 = \qty{12.6(0.17)}{\eV}
 \end{equation*}
 berechnen.
 
-% \begin{figure}
-%   \centering
-%   \caption{Regressionsgerade zur Verifizierung des Moseley'schen Gesetzes.}
-%   \label{fig:moseley}
-%   \includegraphics[width=0.5 \linewidth]{build/moseley.pdf}
-% \end{figure}
+\begin{figure}
+  \centering
+  \caption{Regressionsgerade zur Verifizierung des Moseley'schen Gesetzes.}
+  \label{fig:moseley}
+  \includegraphics[width=0.5 \linewidth]{build/moseley.pdf}
+\end{figure}
