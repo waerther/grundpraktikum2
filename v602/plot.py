@@ -48,10 +48,14 @@ data = data.to_numpy()
 x = data[:,0]
 y = data[:,1]
 
+max_brems = np.max(y[x<=18])
+# x_max_brems = x[y==max_brems]
+# print(x_max_brems[0])
+
 plt.plot(
     x, y , color="b", ms=4, marker="x", linestyle="", label="Messwerte",
 )
-N_loc = find_peaks(y, height=1000)
+N_loc = find_peaks(y, height=max_brems)
 peak_loc = N_loc[0]
 plt.plot(
     x[peak_loc],
