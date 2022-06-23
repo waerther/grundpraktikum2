@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 
 
-Im folgenden werden die Theoriewerte aus \autoref{tab:literatur}, die der Literatur entnommen wurden, verwendet \cite{x_ray_database}.
+Im Folgenden werden die Theoriewerte aus \autoref{tab:literatur}, die der Literatur entnommen wurden, verwendet \cite{x_ray_database}.
 Die zugehörigen Winkel jeweiliger Materialien wurden dann nach \autoref{eq:Winkel} berechnet.
 Es folgt 
 \begin{equation*}
@@ -23,7 +23,7 @@ und
   E_{\mathrm{K}, \beta}^{\mathrm{lit}} =8,906 \mathrm{keV} \, .
 \end{equation*}
 angenommen \cite{x_ray_database}.
-Daraus resultieren dann auch durch \autoref{eq:sigma} die $\sigma_i$'s
+Daraus resultieren dann auch durch \autoref{eq:sigma} die $\sigma_i$
 \begin{align*}
   \sigma_{1} &=3,29 \, ,\\
   \sigma_{2} &=12,38 \\ 
@@ -57,16 +57,16 @@ Mittels Python wurde das Maximum bei $28°$ gefunden.
 
 \begin{figure}
   \centering
+  \includegraphics[width=0.5 \linewidth]{build/bragg.pdf}
   \caption{Messwerte zur Untersuchung der Bragg-Bedingung}
   \label{fig:bragg_2}
-  \includegraphics[width=0.5 \linewidth]{build/bragg.pdf}
 \end{figure}
 
 \subsection{Emissionsspektrum von Kupfer}
-Im folgenden wird das Emissionsspektrum von Kupfer untersucht.
+Im Folgenden wird das Emissionsspektrum von Kupfer untersucht.
 Aufgetragen sind die Messdaten, die über einen USB-Stick beim Versuch gespeichert und ausgelesen wurden, in \autoref{fig:kupfer1}.
 Das Maximum der Bremsstrahlung wurde ebenfalls per Python bei $\qty{11.8}{°}$ ermittelt.  
-Um die charakteristische Strahlung genauer zu untersuchen wird der Bereich der großen Peaks besser aufgelöst und in \autoref{fig:kupfer2} abgebildet.
+Um die charakteristische Strahlung genauer zu, untersuchen wird der Bereich der großen Peaks besser aufgelöst und in \autoref{fig:kupfer2} abgebildet.
 Aus den Peaks lassen sich dann die Energien mit zu
 \begin{align*}
   E_{\text{K}_\alpha} = \qty{8.077}{keV} &&\text{und}&& E_{\text{K}_\beta} = \qty{8.914}{keV}
@@ -97,16 +97,16 @@ Es folgt
 
 \begin{figure}
   \centering
+  \includegraphics[width=0.5 \linewidth]{build/kupfer1.pdf}
   \caption{Messreihe zur Untersuchung des Emissionsspektrums von Kupfer.}
   \label{fig:kupfer1}
-  \includegraphics[width=0.5 \linewidth]{build/kupfer1.pdf}
 \end{figure}
 
 \begin{figure}
   \centering
+  \includegraphics[width=0.5 \linewidth]{build/kupfer2.pdf}
   \caption{ Messreihe zur genaueren Untersuchung des Emissionsspektrums von Kupfer.}
   \label{fig:kupfer2}
-  \includegraphics[width=0.5 \linewidth]{build/kupfer2.pdf}
 \end{figure}
 
 \subsection{Analyse der Absorptionsspektren}
@@ -138,9 +138,9 @@ $\sigma_K$ wird zu $\sigma_K = 3.53$ bestimmt.
 Dargestellt sind die Messdaten und die Absorptionskante in \autoref{fig:zink}.
 \begin{figure}[H]
   \centering
+  \includegraphics[width=0.5 \linewidth]{build/zink.pdf}
   \caption{Absorptionsspektrum von Zink.}
   \label{fig:zink}
-  \includegraphics[width=0.5 \linewidth]{build/zink.pdf}
 \end{figure}
 
 \subsubsection{Gallium}
@@ -149,9 +149,9 @@ Für Gallium ergibt sich eine Energie von $E = \qty{10.393}{\keV}$ für $\theta 
 $\sigma_K$ wird zu $\sigma_K = 3.56$ berechnet.
 \begin{figure}[H]
   \centering
-  \caption{Absorbtionsspektrum von Gallium.}
-  \label{fig:gallium}
   \includegraphics[width=0.5 \linewidth]{build/gallium.pdf}
+  \caption{Absorptionsspektrum von Gallium.}
+  \label{fig:gallium}
 \end{figure}
 
 \subsubsection{Brom}
@@ -160,9 +160,9 @@ Für Brom ergibt sich eine Energie von $\qty{13.546}{\keV}$ für $\theta = \qty{
 $\sigma_K$ berechnet sich zu $\sigma_K = 3.76$.
 \begin{figure} [H]
   \centering
-  \caption{Absorbtionsspektrum von Brom.}
-  \label{fig:brom}
   \includegraphics[width=0.5 \linewidth]{build/brom.pdf}
+  \caption{Absorptionsspektrum von Brom.}
+  \label{fig:brom}
 \end{figure}
 
 
@@ -172,9 +172,9 @@ Dargestellt ist die Messreihe in \autoref{fig:strontium}
 $\sigma_K$ wird zu $\sigma_K = 3.96$ bestimmt.
 \begin{figure}[H]
   \centering
-  \caption{Absorbtionsspektrum von Strontium.}
-  \label{fig:strontium}
   \includegraphics[width=0.5 \linewidth]{build/strontium.pdf}
+  \caption{Absorptionsspektrum von Strontium.}
+  \label{fig:strontium}
 \end{figure}
 
 \subsubsection{Zirkonium}
@@ -183,9 +183,9 @@ Die Messreihe und die Regression sind in \autoref{fig:zirkonium} dargestellt.
 $\sigma_K$ wird zu $\sigma_K = 4.21$ berechnet.
 \begin{figure}[H]
   \centering
-  \caption{Absorbtionsspektrum von Zirkonium.}
-  \label{fig:zirkonium}
   \includegraphics[width=0.5 \linewidth]{build/zirkonium.pdf}
+  \caption{Absorptionsspektrum von Zirkonium.}
+  \label{fig:zirkonium}
 \end{figure}
 
 \subsection{Moseley's Gesetz}
@@ -208,7 +208,7 @@ berechnen.
 
 \begin{figure}
   \centering
-  \caption{Regressionsgerade zur Verifizierung des Moseley'schen Gesetzes.}
-  \label{fig:moseley}
   \includegraphics[width=0.5 \linewidth]{build/moseley.pdf}
+  \caption{Regressionsgerade zur Verifizierung des Moseley's Gesetzes.}
+  \label{fig:moseley}
 \end{figure}
