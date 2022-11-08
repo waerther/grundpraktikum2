@@ -1,4 +1,4 @@
-make all:
+all:
 	make -C us1
 	make -C us2
 	make -C us3
